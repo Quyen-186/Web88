@@ -5,33 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        ADMIN - QUẢN LÝ NGƯỜI DÙNG
+        ADMIN - QUẢN LÝ ĐƠN HÀNG
     </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="main_detailed_page.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="adminUserManagement.css">
     <link rel="stylesheet" href="adminOrderManagement.css">
-    <style>
-        .order__info-user {
-            margin: 30px 0 0 35px;
-        }
-
-        .order__table-info {
-            padding: 0;
-            border: 0;
-            margin: 0;
-        }
-
-        statistics__td {
-            border: 0px solid;
-        }
-    </style>
 </head>
 <body>
     <div class="app">
@@ -62,52 +45,51 @@
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
-                    <div class="progress-bar">
-                        <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./admin.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./adminOrderManagement.html">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <b>Quản lý đơn hàng</b>
-                            </a>
-                            <a class = "main-content__item" href="./adminDetailedOrder.html">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <b>Xem chi tiết đơn hàng</b>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="cart-title">
-                        <h2>Đơn hàng</h2>
-                    </div>
-                    <div class="order__info-user">
-                        <table class="order__table-info">
-                            <tr>
-                                <td class="title-info" style="border: 0;">
-                                    Tên sản phẩm
-                                </td>
-                                <td class="detailed-info" style="border: 0;">Up your mass</td>
-                            </tr>
-                            <tr>
-                                <td class="title-info" style="border: 0;">
-                                    Loaij sản phẩm
-                                </td>
-                                <td class="detailed-info" style="border: 0;">Sữa tăng cân</td>
-                            </tr>
-                            <tr>
-                                <td class="title-info" style="border: 0;">
-                                    Khoảng thời gian
-                                </td>
-                                <td class="detailed-info" style="border: 0;">01-01-2023 dến 01-01-2024</td>
-                            </tr>
-                            <tr>
-                                <td class="title-info" style="border: 0;">
-                                    Tổng số lượng bán ra
-                                </td>
-                                <td class="detailed-info" style="border: 0;">50</td>
-                            </tr>
-                        </table>
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fas fa-list"></i>
+                                Danh mục
+                            </h3>
+    
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="./admin.html" class="category-item__link">TRANG CHỦ</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./adminUserManagement.html" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./adminProductManagement.html" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
+                                </li>
+                                <li class="category-item category-item__active">
+                                    <a href="./adminOrderManagement.html" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="adminStatistics.html" class="category-item__link">THỐNG KÊ</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
 
-                    <div class="grid__column-12">
+                    <div class="grid__column-10">
+                        <div class="om-header__search">
+                            <input type="text" id="inputField" class="om-header__search-input" placeholder="Nhập để tìm kiếm đơn hàng">
+                            <div class="om-header__search-btn">
+                                <i class="om-header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="om-header__search-date">
+                            <form action="">
+                                <label for="" class="search-date__from">Từ:</label>
+                                <input type="date" id="" name="">
+                                <span> - </span>
+                                <label for="">Đến</label>
+                                <input type="date" id="" name="">
+                                <input type="button" onclick="" value="Xuất">
+                              </form>
+                        </div>
                         <div class="user-management">
                             <table>
                                 <tr>
@@ -129,7 +111,7 @@
                                   </tr>
                                   <tr>
                                     <td>2</td>
-                                    <td>04/03/2023</td>
+                                    <td>10/10/2023</td>
                                     <td><select id="status">
                                         <option value="volvo">Đã xử lý</option>
                                         <option value="saab">Chưa xử lý</option>   
@@ -145,6 +127,6 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

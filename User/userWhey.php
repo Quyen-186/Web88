@@ -84,13 +84,13 @@
                             </h3>
     
                             <ul class="category-list">
-                                <li class="category-item category-item__active">
+                                <li class="category-item">
                                     <a href="./user.html" class="category-item__link">Trang chủ</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="./userMilk.html" class="category-item__link">Sữa tăng cân</a>
                                 </li>
-                                <li class="category-item">
+                                <li class="category-item category-item__active">
                                     <a href="./userWhey.html" class="category-item__link">Whey Protein</a>
                                 </li>
                             </ul>
@@ -117,14 +117,14 @@
 
                             <div class="home-filter__page">
                                 <span class="home-filter__page-num">
-                                    <span class="home-filter__page-current">2</span>/2
+                                    <span class="home-filter__page-current">1</span>/2
                                 </span>
 
                                 <div class="home-filter__page-control">
-                                    <a href="./user.html" class="home-filter__page-btn">
+                                    <a href="./user.html" class="home-filter__page-btn home-filter__page-btn--disabled">
                                         <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
                                     </a>
-                                    <a href="./userPage2.html" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                    <a href="./userPage2.html" class="home-filter__page-btn">
                                         <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
                                     </a>
                                 </div>
@@ -134,11 +134,11 @@
                         <div class="home-product">
                             <div class="grid__row">
                                 <div class="grid__column-2-4">
-                                    <a class="home-product-item" href="./detailed_page.html">
+                                    <a class="home-product-item" href="./detailed-page__whey-1.html">
                                         <div class="home-product-item__img">
-                                            <img src="./Ảnh sản phẩm whey protein bán chạy/upl_mutant_iso_surge_5lbs_2_27kg_1677568496_image_1677568496.jpg" alt="" class="home-product-item__img">
+                                            <img src="./Ảnh sản phẩm whey protein bán chạy/upl_hydro_whey_zero_1677554718_image_1677554718.jpg" alt="" class="home-product-item__img">
                                             <h4 class="home-product-item__name">
-                                                Mutant Iso Surge 5lbs 2.27kg   
+                                                Up Your Mass XXXL 1350 12lbs    
                                             </h4>
                                             <div class="home-product-item__price">
                                                 <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
@@ -146,6 +146,20 @@
                                         </div>
                                     </a>
                                 </div>  
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="./detailed-page__whey-2.html">
+                                        <div class="home-product-item__img">
+                                            <img src="./Ảnh sản phẩm whey protein bán chạy/upl_iso_hd_5lbs_100__isolate_1677568826_image_1677568826.jpg" alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                EliteLab Mass Muscle Gainer 20lbs    
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            
                             </div>
                         </div>
                     </div>
@@ -255,6 +269,6 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

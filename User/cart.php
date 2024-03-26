@@ -4,15 +4,19 @@
     <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        WheyStore - Dinh dưỡng, thực phẩm thể hình, Gym hàng giả.
+    </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main_detailed_page.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="./main_detailed_page.css">
+    <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="user.css">
-    <script src="main.js"></script>
-    <title>EliteLab Mass Muscle Gainer 20lbs </title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <div class="app">
@@ -27,7 +31,7 @@
                             Ghé fanpage
                             <a href="" class="header__navbar-icon-link">
                                 <i class="fa-brands fa-facebook"></i>
-                            </a>    
+                            </a>  
                         </li>
                     </ul>
     
@@ -66,147 +70,106 @@
                     </div>
 
                     <div class="header__cart">
-                        <!-- <i class="header__cart-icon fa-solid fa-cart-shopping"></i>  -->
+                        <i class="header__cart-icon fa-solid fa-cart-shopping"></i> 
                     </div>   
                 </div>            
             </div>
         </header>
         
-        <div class="app__container-order">
+        <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
                             <a class = "main-content__item" href="./user.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./userMilk.html">
+                            <a class = "main-content__item" href="./user-info.html">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <b>Sữa tăng cân</b>
+                                <b>Thông tin người dùng</b>
                             </a>
-                            <a class = "main-content__item" href="./detailed-page__milk-2.html">
+                            <a class = "main-content__item" href="./cart.html">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <b>EliteLab Mass Muscle Gainer 20lbs </b>
+                                <b>Giỏ hàng</b>
                             </a>
                         </div>
                     </div>
-                    <div class="grid__column-5">
-                        <img src="./Ảnh sản phẩm chi tiết/Sữa tăng cân - Ảnh sp chi tiết/upl_elitelab_mass_muscle_gainer_20lbs_1670403426_image_1670403426.jpg" alt="" class="item-image">
+                    <div class="cart-title">
+                        <h2>Giỏ hàng</h2>
                     </div>
-                    <div class="grid__column-7">
-                        <div class="order">
-                            <div class="order__item-name">
-                                EliteLab Mass Muscle Gainer 20lbs 
-                            </div>
-                            <div class="order__item-price">
-                                <b>1.450.000đ</b>
-                            </div>
-                            <div class="order__transfer">
-                                <div class="order__transfer-block">Vận chuyển</div>
-                                <div class="order__transfer-detail-info">
-                                    <div class="detail-info__freeship">
-                                        <div class="freeship-icon">
-                                            <img src="./Ảnh sản phẩm chi tiết/d9e992985b18d96aab90969636ebfd0e.png" alt="" class="freeship-icon__css">
-                                        </div>
-                                        <div class="freeship-info">Miễn phí vận chuyển</div>
+                    <div class="cart__main-content">
+                        <div class="cart-grid__column-8">
+                            <div class="cart-content">
+                                <div class="cart__item-head">
+                                    <div class="cart__product-info">
+                                        <b>Sản phẩm</b>
                                     </div>
-                                    <div class="detail-info__transfer-method">
-                                        <div class="transfer-icon">
-                                            <i class="fa-solid fa-truck transfer-icon__css"></i>
-                                        </div>
-                                        <div class="transfer-info">
-                                            <div class="transfer-info__where">
-                                                <div class="transfer-info__where-text">Vận chuyển tới</div>
-                                                <div class="transfer-info__where-button"></div>
-                                            </div>
-                                            <div class="transfer-info__transfer-fee">
-                                                <div class="transfer-info__transfer-fee-text">Phí vận chuyển</div>
-                                                <div class="transfer-info__transfer-fee-button"></div>
-                                            </div>
-                                        </div>
+                                    <div class="cart__product-price">
+                                        <b>Đơn giá</b>
+                                    </div>
+                                    <div class="cart__product-numbers">
+                                        <b>Số lượng</b>
+                                    </div>
+                                    <div class="cart__product-subtotal">
+                                        <b>Thành tiền</b>
+                                    </div>
+                                    <div class="cart__product-remove">
+                                          
                                     </div>
                                 </div>
-                            </div>
-                            <!-- <div class="order__product-classification">
-                                <div class="product-classification__text">Hương vị</div>
-                                <div class="product-classification__aroma">
-                                    <button class="btn__choose product-classification__aroma-kind">Milk Chocolate</button>
-                                    <button class="btn__choose product-classification__aroma-kind">Cookies & Cream</button>
+                                <div class="cart__list-product">
+                                    <div class="cart__product-info">
+                                        <a class="cart__product-img">
+                                            <img src="./Ảnh sản phẩm hot nhất/upl_mass_fusion_12lbs_5_4kg_1685693088_image_1685693088.jpg" alt="" class="cart__img-css">
+                                        </a>
+                                        <span class="cart__product-text">Up your mass xxxl 1350 220pl</span>
+                                    </div>
+                                    <div class="cart__product-price">
+                                        1.600.000 đ
+                                    </div>
+                                    <div class="cart__product-numbers">
+                                        <div class="number-products__btn">
+                                            <button onclick="totalClick(-1)" class="btn__choose minus">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+                                            <button id="totalClicks" class="btn__choose num">1</button>
+                                            <button onclick="totalClick(1)" class="btn__choose plus">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="cart__product-subtotal">
+                                        1.600.000 đ
+                                    </div>
+                                    <div class="cart__product-remove">
+                                        <i class="fa-solid fa-trash cart__remove-icon"></i>
+                                    </div>
                                 </div>
-                            </div> -->
-                            <div class="order__number-products">
-                                <div class="number-products__text">Số lượng</div>
-                                <div class="number-products__btn">
-                                    <button onclick="totalClick(-1)" class="btn__choose minus">
-                                        <i class="fa-solid fa-minus"></i>
-                                    </button>
-                                    <button id="totalClicks" class="btn__choose num">1</button>
-                                    <button onclick="totalClick(1)" class="btn__choose plus">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </div>
                             </div>
-                            <div class="order__order-buy">
-                                <a href="./cart.html">
-                                    <button class="btn__choose order-buy__btn-addToCast">
-                                        <i class="fa-solid fa-cart-shopping cart-shopping__css"></i>
-                                        Thêm vào giỏ hàng
-                                    </button>
-                                </a>
-                                <a href="./paymentForm.html">
-                                    <button class="btn__choose order-buy__btn-buy">Mua hàng</button>
-                                </a>
+    
+                        </div>
+                        <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
+                            <div class="cart__totals">
+                                <div class="cart__totals-title">
+                                    <h2>Cộng giỏ hàng</h2>
+                                </div>
+                                <div class="cart__totals-details">
+                                    <div class="totals-details">
+                                        <div class= "text__price-currency">Tạm tính</div>
+                                        <div class="subtotal__price-currency">
+                                            <b>3.200.000 đ</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart__btn-payment">
+                                    <a href="./paymentForm.html">
+                                        <button class="btn">
+                                            Tiến hành thanh toán
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="app__container-info-describtion">
-                        <div class="info-product">
-                            <div class="info-product__title">
-                                <h2>Thông tin sản phẩm</h2>
-                            </div>
-                            <div class="info-product__main-content">
-                                <div class="main-content__product">
-                                    <div class="main-content__title title__add-css-1">
-                                        <b>Serving Size</b>
-                                    </div>
-                                    <div class="main-content__detail">6 scoops</div>
-                                </div>
-                                <div class="main-content__product">
-                                    <div class="main-content__title">
-                                        <b>Servings Per Container</b>
-                                    </div>
-                                    <div class="main-content__detail">khoảng 16</div>
-                                </div>
-                                <div class="main-content__product">
-                                    <div class="main-content__title title__add-css-2">
-                                        <b>Xuất xứ</b>
-                                    </div>
-                                    <div class="main-content__detail">USA</div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="describtion-product">
-                            <h2>Hàm lượng dinh dưỡng tuyệt vời</h2>
-                            <p>
-                                - Cung cấp nguồn calo khổng lồ 1.350 Kcal/ 1serving 
-                                <br>
-                                - 50g protein - Ma trận cao cấp bao gồm cả dạng hấp thụ nhanh và chậm
-                                <br>
-                                - 11g BCAA + 250g carb phức + Bổ sung CLA
-                                <br>
-                                - Nổi bật 23g EAAs – axit amin thiết yếu mà cơ thể không tự sản sinh
-                            </p>
-                            <h2>Ưu thế vượt trội của Up Your Mass XXXL 1350</h2>
-                            <p>
-                                - 1350 calo khi không pha cùng sữa thực sự là một thách thức không nhỏ đối với các sản phẩm cạnh tranh. Và với hàm lượng cao như vậy, tăng cân là chuyện tất yếu.
-                                <br>
-                                - Bên cạnh đó, sự kết hợp giữa Protein và BCAA hàm lượng cao có trong Up Your Mass XXXL 1350 giúp phục hồi cơ bắp nhanh chóng, đồng thời tăng tổng hợp protein . Khi tốc độ tổng hợp > tốc độ phân hủy, dĩ nhiên, bạn sẽ có được sự phát triển cơ bắp.
-                                <br>
-                                - Up Your Mass XXXL 1350 chứa 11g axit amin chuỗi nhánh (đây là các axit amin thiết yếu gồm Valine, Isoleucine và Leucine) =>> kích thích tổng hợp protein cơ bắp hơn loại protein bình thường.
-                                <br>
-                                - Đặc biệt, khi sự bổ sung EAAs đang tạo nên một cơn sốt thực thụ trong làng gym thì khá khen cho MHP đã rất thức thời trong cuộc đua dinh dưỡng này.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </div> 
             </div>
         </div>
 
@@ -312,6 +275,6 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

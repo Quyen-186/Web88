@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        ADMIN - SỬA THÔNG TIN NGƯỜI DÙNG
+        ADMIN - SỬA SẢN PHẨM
     </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="reset.css">
@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="main_detailed_page.css">
     <link rel="stylesheet" href="paymentForm.css">
+    <style>
+        .admin-fixpro__img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
     <div class="app">
@@ -53,12 +59,12 @@
                         </a>
                         <a class = "main-content__item" href="./adminAddUserForm.html">
                             <i class="fa-solid fa-arrow-right"></i>
-                            <b>Sửa thông tin người dùng</b>
+                            <b>Sửa thông tin</b>
                         </a>
                     </div>
                 </div>              
                 <div class="cart-title">
-                    <h2>Thêm người dùng</h2>
+                    <h2>Sửa thông tin sản phẩm</h2>
                 </div>
                 <div class="row">
                     <div class="col-75">
@@ -66,23 +72,32 @@
                             <form action="">
                                 <div class="row">
                                     <div class="col-50">
-                                        <label for="fname" style="font-size: 1.5rem;"><i class="icon-payment fa fa-user"></i> <b>Tên</b></label>
-                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Họ tên">
+                                        <label for="fname" style="font-size: 1.5rem;"><i></i> <b>Ảnh trước đó</b></label>
+                                        <img src="./Ảnh sản phẩm hot nhất/upl_up_your_mass_xxxl_1350_12lbs_1677559574_image_1677559574.jpg" alt="" class="admin-fixpro__img" id="imageElement" alt="Image 1">
+                                        <br><br>   
+                                        <form action="">
+                                            <button id="deleteButton" style="font-size: 1.5rem;">Bỏ ảnh</button>
+                                            <input type="file" name="uploadfile" id="img" style="display: none;">
+                                            <label class="img" for="img">
+                                                <i style="font-size: 1.5rem;" class="fa-solid fa-image"></i>
+                                                <span style="font-size: 1.5rem;">Thêm ảnh mới</span>
+                                            </label>
+                                        </form>
 
-                                        <label for="fname" style="font-size: 1.5rem;"><i class="icon-payment fa fa-user"></i> <b>Tên tài khoản</b></label>
-                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Tên tài khoản">
+                                        <label for="fname" style="font-size: 1.5rem;"><i></i> <b>Tên sản phẩm</b></label>
+                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Tên sản phẩm trước đó: Up Your Mass XXXL 1350 12lbs">
 
-                                        <label for="email" style="font-size: 1.5rem;"><i class="icon-payment fa fa-envelope"></i> Email</label>
-                                        <input type="text" id="email" name="email" style="font-size: 1.5rem;" placeholder="Email">
+                                        <label for="fname" style="font-size: 1.5rem;"><i></i> <b>Phân loại</b></label>
+                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Phân loại trước đó: Whey Protein">
 
-                                        <label for="adr" style="font-size: 1.5rem;"><i class="icon-payment fa fa-address-card-o"></i> Địa chỉ</label>
-                                        <input type="text" id="adr" name="address" style="font-size: 1.5rem;" placeholder="Địa chỉ">
+                                        <label for="email" style="font-size: 1.5rem;"><i></i> Giá</label>
+                                        <input type="text" id="email" name="email" style="font-size: 1.5rem;" placeholder="Giá trước đó 1.500.000 đ">
 
-                                        <label for="psw-repeat" style="font-size: 1.5rem;"><b>Mật khẩu</b></label>
-                                        <input type="password" style="font-size: 1.5rem;" placeholder="Mật khẩu" name="psw-repeat" required>
+                                        <label for="adr" style="font-size: 1.5rem;"><i></i> Mô tả</label>
+                                        <input type="text" id="adr" name="address" style="font-size: 1.5rem;" placeholder="Mô tả sản phẩm chi tiết trước đó: Thực phẩm bổ sung cơ bắp.">
                                     </div>
                                 </div>
-                                <button onclick="alert('Đã sửa thành công.')" class="btn">Sửa</button>
+                                <button onclick="alert('Đã sửa thành công !')" class="btn">Sửa thông tin</button>
                             </form>
                         </div>
                     </div>
@@ -90,6 +105,6 @@
             </div>
         </div>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

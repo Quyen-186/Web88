@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="user.css">
-    <script src="main.js"></script>
-    <title>ISO HD 5lbs 100% Isolate</title>
+    <!-- <script src="main.js"></script> -->
+    <title>Up Your Mass XXXL 1350 12lbs</title>
 </head>
 <body>
     <div class="app">
@@ -78,23 +78,23 @@
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
                             <a class = "main-content__item" href="./user.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./userWhey.html">
+                            <a class = "main-content__item" href="./userMilk.html">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <b>Whey Protein</b>
+                                <b>Sữa tăng cân</b>
                             </a>
-                            <a class = "main-content__item" href="./detailed-page__whey-2.html">
+                            <a class = "main-content__item" href="./detailed-page__milk-2.html">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <b>ISO HD 5lbs 100% Isolate</b>
+                                <b>Up Your Mass XXXL 1350 12lbs</b>
                             </a>
                         </div>
                     </div>
                     <div class="grid__column-5">
-                        <img src="./Ảnh sản phẩm chi tiết/Whey - Ảnh sp chi tiết/upl_iso_hd_5lbs_100__isolate_1698376410_image_1698376410.jpg" alt="" class="item-image">
+                        <img src="./Ảnh sản phẩm chi tiết/upl_up_your_mass_xxxl_1350_12lbs_1670464923_image_1670464923.jpg" alt="" class="item-image">
                     </div>
                     <div class="grid__column-7">
                         <div class="order">
                             <div class="order__item-name">
-                                ISO HD 5lbs 100% Isolate
+                                Up Your Mass XXXL 1350 12lbs
                             </div>
                             <div class="order__item-price">
                                 <b>1.450.000đ</b>
@@ -312,6 +312,6 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

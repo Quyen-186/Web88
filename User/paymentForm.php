@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="order.css">
     <link rel="stylesheet" href="cart.css"> 
     <link rel="stylesheet" href="paymentForm.css">   
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </head>
 <body>
     <div class="app">
@@ -287,6 +287,6 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>

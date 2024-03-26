@@ -12,11 +12,8 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="./main_detailed_page.css">
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="user.css">
-    <link rel="stylesheet" href="order.css">
-    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <div class="app">
@@ -70,7 +67,7 @@
                     </div>
 
                     <div class="header__cart">
-                        <i class="header__cart-icon fa-solid fa-cart-shopping"></i> 
+                        <a href="./cart.html"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a> 
                     </div>   
                 </div>            
             </div>
@@ -79,91 +76,100 @@
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
-                    <div class="progress-bar">
-                        <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./user.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./user-info.html">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <b>Thông tin người dùng</b>
-                            </a>
-                            <a class = "main-content__item" href="./cart.html">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <b>Giỏ hàng</b>
-                            </a>
-                        </div>
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fas fa-list"></i>
+                                Danh mục
+                            </h3>
+    
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="./user.html" class="category-item__link">Trang chủ</a>
+                                </li>
+                                <li class="category-item category-item__active">
+                                    <a href="./userMilk.html" class="category-item__link">Sữa tăng cân</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./userWhey.html" class="category-item__link">Whey Protein</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div class="cart-title">
-                        <h2>Giỏ hàng</h2>
-                    </div>
-                    <div class="cart__main-content">
-                        <div class="cart-grid__column-8">
-                            <div class="cart-content">
-                                <div class="cart__item-head">
-                                    <div class="cart__product-info">
-                                        <b>Sản phẩm</b>
-                                    </div>
-                                    <div class="cart__product-price">
-                                        <b>Đơn giá</b>
-                                    </div>
-                                    <div class="cart__product-numbers">
-                                        <b>Số lượng</b>
-                                    </div>
-                                    <div class="cart__product-subtotal">
-                                        <b>Thành tiền</b>
-                                    </div>
-                                    <div class="cart__product-remove">
-                                          
-                                    </div>
-                                </div>
-                                <div class="cart__list-product">
-                                    <div class="cart__product-info">
-                                        <a class="cart__product-img">
-                                            <img src="./Ảnh sản phẩm hot nhất/upl_mass_fusion_12lbs_5_4kg_1685693088_image_1685693088.jpg" alt="" class="cart__img-css">
-                                        </a>
-                                        <span class="cart__product-text">Up your mass xxxl 1350 220pl</span>
-                                    </div>
-                                    <div class="cart__product-price">
-                                        1.600.000 đ
-                                    </div>
-                                    <div class="cart__product-numbers">
-                                        <div class="number-products__btn">
-                                            <button onclick="totalClick(-1)" class="btn__choose minus">
-                                                <i class="fa-solid fa-minus"></i>
-                                            </button>
-                                            <button id="totalClicks" class="btn__choose num">1</button>
-                                            <button onclick="totalClick(1)" class="btn__choose plus">
-                                                <i class="fa-solid fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="cart__product-subtotal">
-                                        1.600.000 đ
-                                    </div>
-                                    <div class="cart__product-remove">
-                                        <i class="fa-solid fa-trash cart__remove-icon"></i>
-                                    </div>
+
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <span class="home-filter__label">Tìm kiếm nâng cao</span>
+                            <select class = "home-filter__btn btn">
+                                <option value="Sữa tăng cân">Sữa tăng cân</option>
+                                <option value="Whey Protein">Whey Protein</option>
+                                <option value="Sữa tăng cân"></option>
+                            </select>
+
+                            <select class = "home-filter__btn btn">
+                                <option value="">Giá: thấp đến cao</option>
+                                <option value="">Giá: cao đến thấp</option>
+                            </select>
+
+                            <a href="./userMilk.html">
+                                <button class="home-filter__btn btn" style="background-color: orange;">Tìm</button>
+                            </a>
+
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/2
+                                </span>
+
+                                <div class="home-filter__page-control">
+                                    <a href="./user.html" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                                    </a>
+                                    <a href="./userPage2.html" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                                    </a>
                                 </div>
                             </div>
-    
                         </div>
-                        <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
-                            <div class="cart__totals">
-                                <div class="cart__totals-title">
-                                    <h2>Cộng giỏ hàng</h2>
-                                </div>
-                                <div class="cart__totals-details">
-                                    <div class="totals-details">
-                                        <div class= "text__price-currency">Tạm tính</div>
-                                        <div class="subtotal__price-currency">
-                                            <b>3.200.000 đ</b>
+
+                        <div class="home-product">
+                            <div class="grid__row">
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="./detailed-page__milk-1.html">
+                                        <div class="home-product-item__img">
+                                            <img src="./Ảnh sản phẩm hot nhất/upl_up_your_mass_xxxl_1350_12lbs_1677559574_image_1677559574.jpg" alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                Up Your Mass XXXL 1350 12lbs    
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                </div>  
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="./detailed-page__milk-2.html">
+                                        <div class="home-product-item__img">
+                                            <img src="./Ảnh sản phẩm sữa tăng cân bán chạy/upl_elitelab_mass_muscle_gainer_20lbs_1682398641_image_1682398641.jpg" alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                EliteLab Mass Muscle Gainer 20lbs    
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="cart__btn-payment">
-                                    <a href="./paymentForm.html">
-                                        <button class="btn">
-                                            Tiến hành thanh toán
-                                        </button>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="./detailed-page__milk-1.html">
+                                        <div class="home-product-item__img">
+                                            <img src="./Ảnh sản phẩm sữa tăng cân bán chạy/upl_mass_tech_2000_22lbs_10kg_1677569000_image_1677569000.jpg" alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                Mass Tech 2000 22lbs 10kg   
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -275,6 +281,6 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>
