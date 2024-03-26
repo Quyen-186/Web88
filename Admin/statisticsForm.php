@@ -64,12 +64,12 @@
                 <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./admin.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./adminStatistics.html">
+                            <a class = "main-content__item" href="./admin.php"><b>Trang chủ</b></a>
+                            <a class = "main-content__item" href="./adminStatistics.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Thống kê</b>
                             </a>
-                            <a class = "main-content__item" href="./adminDetailedOrder.html">
+                            <a class = "main-content__item" href="./adminDetailedOrder.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Xem chi tiết đơn hàng</b>
                             </a>
@@ -124,7 +124,7 @@
                                         <option value="saab">Chưa xử lý</option>   
                                     </select></td>
                                     <td>
-                                        <a href="./adminDetailedOrder.html">Xem chi tiết</a>
+                                        <a href="./adminDetailedOrder.php">Xem chi tiết</a>
                                     </td>
                                   </tr>
                                   <tr>
@@ -135,7 +135,7 @@
                                         <option value="saab">Chưa xử lý</option>   
                                     </select></td>
                                     <td>
-                                        <a href="adminDetailedOrder.html">Xem chi tiết</a>
+                                        <a href="adminDetailedOrder.php">Xem chi tiết</a>
                                     </td>
                                   </tr>
                             </table>

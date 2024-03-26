@@ -8,7 +8,7 @@
     <title>Wheystore - Đăng nhập</title>
 </head>
 <body>
-    <form action="./user.html" style="border:1px solid #ccc">
+    <form action="./user.php" style="border:1px solid #ccc">
       <div class="container">
         <h1>Đăng nhập</h1>
         <hr>
@@ -23,11 +23,11 @@
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
         
-        <p>Bạn mới biết đến WheyStore ? <a href="./Sign-up.html" style="color:dodgerblue">Đăng ký</a>.</p>
+        <p>Bạn mới biết đến WheyStore ? <a href="./Sign-up.php" style="color:dodgerblue">Đăng ký</a>.</p>
     
         <div class="clearfix">
           <button type="button" class="cancelbtn">Hủy</button>
-          <a href="./user.html">
+          <a href="./user.php">
             <button type="submit" class="signupbtn">
               Đăng nhập
             </button>

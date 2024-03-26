@@ -10,7 +10,7 @@
     
 <body>
 
-    <form action="./Sign-in.html" style="border:1px solid #ccc">
+    <form action="./Sign-in.php" style="border:1px solid #ccc">
       <div class="container">
         <h1>Đăng ký</h1>
         <hr>
@@ -43,7 +43,7 @@
         <div class="clearfix">
           <button type="button" class="cancelbtn">Hủy</button>
           <button type="submit" class="signupbtn">
-            <a href="./Sign-in.html">Đăng ký</a>
+            <a href="./Sign-in.php">Đăng ký</a>
           </button>
         </div>
       </div>

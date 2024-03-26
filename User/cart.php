@@ -45,13 +45,13 @@
                             <a href="" class="header__navbar-item-link">Trợ giúp</a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./user-info.html" class="user-header__profile-img-name" style="text-decoration: none;">
+                            <a href="./user-info.php" class="user-header__profile-img-name" style="text-decoration: none;">
                                 <img src="./Ảnh web admin/387123461_1563644207508135_2222331430281718689_n.jpg" alt="" class="user-header__profile-img">
                                 <span class="user-header__profile-name">Thựn Mapdit</span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./index.html" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="./index.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -81,12 +81,12 @@
                 <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./user.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./user-info.html">
+                            <a class = "main-content__item" href="./user.php"><b>Trang chủ</b></a>
+                            <a class = "main-content__item" href="./user-info.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Thông tin người dùng</b>
                             </a>
-                            <a class = "main-content__item" href="./cart.html">
+                            <a class = "main-content__item" href="./cart.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Giỏ hàng</b>
                             </a>
@@ -160,7 +160,7 @@
                                     </div>
                                 </div>
                                 <div class="cart__btn-payment">
-                                    <a href="./paymentForm.html">
+                                    <a href="./paymentForm.php">
                                         <button class="btn">
                                             Tiến hành thanh toán
                                         </button>

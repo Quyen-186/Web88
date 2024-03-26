@@ -54,19 +54,19 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./admin.html" class="category-item__link">TRANG CHỦ</a>
+                                    <a href="./admin.php" class="category-item__link">TRANG CHỦ</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminUserManagement.html" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
+                                    <a href="./adminUserManagement.php" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
                                 </li>
                                 <li class="category-item category-item__active">
-                                    <a href="./adminProductManagement.html" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
+                                    <a href="./adminProductManagement.php" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminOrderManagement.html" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
+                                    <a href="./adminOrderManagement.php" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="adminStatistics.html" class="category-item__link">THỐNG KÊ</a>
+                                    <a href="adminStatistics.php" class="category-item__link">THỐNG KÊ</a>
                                 </li>
                             </ul>
                         </nav>
@@ -124,7 +124,7 @@
                         </div>
                         
                         <div class="add-product">
-                            <a href="./adminAddProductForm.html" class="add-product__link">
+                            <a href="./adminAddProductForm.php" class="add-product__link">
                                 <div class="add-product__icon">
                                     <i class="add-product__plus fa-solid fa-plus"></i>
                                 </div>
@@ -144,7 +144,7 @@
                                             <div class="home-product-item__price pro-manage__function">
                                                 <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
                                                 <div style="margin-left: auto;">
-                                                    <a href="./adminFixProductForm.html">
+                                                    <a href="./adminFixProductForm.php">
                                                         <i class="pro-manage__function-icon fa-solid fa-wrench"></i>
                                                     </a>
                                                     <button onclick="alert('Bạn có muốn xóa sản phẩm này không ?')" class="admin-usermanage__btn">
@@ -165,7 +165,7 @@
                                             <div class="home-product-item__price pro-manage__function">
                                                 <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
                                                 <div style="margin-left: auto;">
-                                                    <a href="./adminFixProductForm.html">
+                                                    <a href="./adminFixProductForm.php">
                                                         <i class="pro-manage__function-icon fa-solid fa-wrench"></i>
                                                     </a>
                                                     <button onclick="alert('Bạn có muốn xóa sản phẩm này không ?')" class="admin-usermanage__btn">

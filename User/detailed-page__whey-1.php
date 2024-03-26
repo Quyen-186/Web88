@@ -41,13 +41,13 @@
                             <a href="" class="header__navbar-item-link">Trợ giúp</a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./user-info.html" class="user-header__profile-img-name" style="text-decoration: none;">
+                            <a href="./user-info.php" class="user-header__profile-img-name" style="text-decoration: none;">
                                 <img src="./Ảnh web admin/387123461_1563644207508135_2222331430281718689_n.jpg" alt="" class="user-header__profile-img">
                                 <span class="user-header__profile-name">Thựn Mapdit</span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./index.html" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="./index.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -77,12 +77,12 @@
                 <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./user.html"><b>Trang chủ</b></a>
-                            <a class = "main-content__item" href="./userWhey.html">
+                            <a class = "main-content__item" href="./user.php"><b>Trang chủ</b></a>
+                            <a class = "main-content__item" href="./userWhey.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Whey Protein</b>
                             </a>
-                            <a class = "main-content__item" href="./detailed-page__whey-1.html">
+                            <a class = "main-content__item" href="./detailed-page__whey-1.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>BiotechUSA Hydro Whey Zero 4LBS (1,816Kg)</b>
                             </a>
@@ -145,13 +145,13 @@
                                 </div>
                             </div>
                             <div class="order__order-buy">
-                                <a href="./cart.html">
+                                <a href="./cart.php">
                                     <button class="btn__choose order-buy__btn-addToCast">
                                         <i class="fa-solid fa-cart-shopping cart-shopping__css"></i>
                                         Thêm vào giỏ hàng
                                     </button>
                                 </a>
-                                <a href="./paymentForm.html">
+                                <a href="./paymentForm.php">
                                     <button class="btn__choose order-buy__btn-buy">Mua hàng</button>
                                 </a>
                             </div>

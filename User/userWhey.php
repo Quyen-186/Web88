@@ -42,13 +42,13 @@
                             <a href="" class="header__navbar-item-link">Trợ giúp</a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./user-info.html" class="user-header__profile-img-name" style="text-decoration: none;">
+                            <a href="./user-info.php" class="user-header__profile-img-name" style="text-decoration: none;">
                                 <img src="./Ảnh web admin/387123461_1563644207508135_2222331430281718689_n.jpg" alt="" class="user-header__profile-img">
                                 <span class="user-header__profile-name">Thựn Mapdit</span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./index.html" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="./index.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="header__cart">
-                        <a href="./cart.html"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a> 
+                        <a href="./cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a> 
                     </div>   
                 </div>            
             </div>
@@ -85,13 +85,13 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./user.html" class="category-item__link">Trang chủ</a>
+                                    <a href="./user.php" class="category-item__link">Trang chủ</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./userMilk.html" class="category-item__link">Sữa tăng cân</a>
+                                    <a href="./userMilk.php" class="category-item__link">Sữa tăng cân</a>
                                 </li>
                                 <li class="category-item category-item__active">
-                                    <a href="./userWhey.html" class="category-item__link">Whey Protein</a>
+                                    <a href="./userWhey.php" class="category-item__link">Whey Protein</a>
                                 </li>
                             </ul>
                         </nav>
@@ -111,7 +111,7 @@
                                 <option value="">Giá: cao đến thấp</option>
                             </select>
 
-                            <a href="./userWhey.html">
+                            <a href="./userWhey.php">
                                 <button class="home-filter__btn btn" style="background-color: orange;">Tìm</button>
                             </a>
 
@@ -121,10 +121,10 @@
                                 </span>
 
                                 <div class="home-filter__page-control">
-                                    <a href="./user.html" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                    <a href="./user.php" class="home-filter__page-btn home-filter__page-btn--disabled">
                                         <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
                                     </a>
-                                    <a href="./userPage2.html" class="home-filter__page-btn">
+                                    <a href="./userPage2.php" class="home-filter__page-btn">
                                         <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
                                     </a>
                                 </div>
@@ -134,7 +134,7 @@
                         <div class="home-product">
                             <div class="grid__row">
                                 <div class="grid__column-2-4">
-                                    <a class="home-product-item" href="./detailed-page__whey-1.html">
+                                    <a class="home-product-item" href="./detailed-page__whey-1.php">
                                         <div class="home-product-item__img">
                                             <img src="./Ảnh sản phẩm whey protein bán chạy/upl_hydro_whey_zero_1677554718_image_1677554718.jpg" alt="" class="home-product-item__img">
                                             <h4 class="home-product-item__name">
@@ -147,7 +147,7 @@
                                     </a>
                                 </div>  
                                 <div class="grid__column-2-4">
-                                    <a class="home-product-item" href="./detailed-page__whey-2.html">
+                                    <a class="home-product-item" href="./detailed-page__whey-2.php">
                                         <div class="home-product-item__img">
                                             <img src="./Ảnh sản phẩm whey protein bán chạy/upl_iso_hd_5lbs_100__isolate_1677568826_image_1677568826.jpg" alt="" class="home-product-item__img">
                                             <h4 class="home-product-item__name">

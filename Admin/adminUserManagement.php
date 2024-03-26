@@ -54,19 +54,19 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./admin.html" class="category-item__link">TRANG CHỦ</a>
+                                    <a href="./admin.php" class="category-item__link">TRANG CHỦ</a>
                                 </li>
                                 <li class="category-item category-item__active">
-                                    <a href="./adminUserManagement.html" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
+                                    <a href="./adminUserManagement.php" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminProductManagement.html" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
+                                    <a href="./adminProductManagement.php" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminOrderManagement.html" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
+                                    <a href="./adminOrderManagement.php" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="adminStatistics.html" class="category-item__link">THỐNG KÊ</a>
+                                    <a href="adminStatistics.php" class="category-item__link">THỐNG KÊ</a>
                                 </li>
                             </ul>
                         </nav>
@@ -74,7 +74,7 @@
 
                     <div class="grid__column-10">
                         <div class="add-product">
-                            <a href="./adminAddUserForm.html" class="add-product__link">
+                            <a href="./adminAddUserForm.php" class="add-product__link">
                                 <div class="add-product__icon">
                                     <i class="add-product__plus fa-solid fa-plus"></i>
                                 </div>
@@ -97,7 +97,7 @@
                                     <td>quocthuandao0403@gmail.com</td>
                                     <td>Mở khóa</td>
                                     <td>
-                                        <a href="./adminFixUserForm.html" class="admin-usermanage__link">
+                                        <a href="./adminFixUserForm.php" class="admin-usermanage__link">
                                             <i class="fa-solid fa-wrench"></i>
                                         </a>
                                         
@@ -112,7 +112,7 @@
                                     <td>quocthuandao0403@gmail.com</td>
                                     <td>Mở khóa</td>
                                     <td>
-                                        <a href="./adminFixUserForm.html" class="admin-usermanage__link">
+                                        <a href="./adminFixUserForm.php" class="admin-usermanage__link">
                                             <i class="fa-solid fa-wrench"></i>
                                         </a>
                                         

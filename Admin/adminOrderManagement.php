@@ -54,19 +54,19 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./admin.html" class="category-item__link">TRANG CHỦ</a>
+                                    <a href="./admin.php" class="category-item__link">TRANG CHỦ</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminUserManagement.html" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
+                                    <a href="./adminUserManagement.php" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./adminProductManagement.html" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
+                                    <a href="./adminProductManagement.php" class="category-item__link">QUẢN LÝ <br> SẢN PHẨM</a>
                                 </li>
                                 <li class="category-item category-item__active">
-                                    <a href="./adminOrderManagement.html" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
+                                    <a href="./adminOrderManagement.php" class="category-item__link">QUẢN LÝ ĐƠN HÀNG</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="adminStatistics.html" class="category-item__link">THỐNG KÊ</a>
+                                    <a href="adminStatistics.php" class="category-item__link">THỐNG KÊ</a>
                                 </li>
                             </ul>
                         </nav>
@@ -106,7 +106,7 @@
                                         <option value="saab">Chưa xử lý</option>   
                                     </select></td>
                                     <td>
-                                        <a href="./adminDetailedOrder.html">Xem chi tiết</a>
+                                        <a href="./adminDetailedOrder.php">Xem chi tiết</a>
                                     </td>
                                   </tr>
                                   <tr>
@@ -117,7 +117,7 @@
                                         <option value="saab">Chưa xử lý</option>   
                                     </select></td>
                                     <td>
-                                        <a href="adminDetailedOrder.html">Xem chi tiết</a>
+                                        <a href="adminDetailedOrder.php">Xem chi tiết</a>
                                     </td>
                                   </tr>
                             </table>

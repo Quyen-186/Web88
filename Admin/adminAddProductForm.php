@@ -46,12 +46,12 @@
             <div class="grid">  
                 <div class="progress-bar">
                     <div class="progress-bar__main-content">
-                        <a class = "main-content__item" href="./admin.html"><b>Trang chủ</b></a>
-                        <a class = "main-content__item" href="./adminProductManagement.html">
+                        <a class = "main-content__item" href="./admin.php"><b>Trang chủ</b></a>
+                        <a class = "main-content__item" href="./adminProductManagement.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Quản lý sản phẩm</b>
                         </a>
-                        <a class = "main-content__item" href="./adminAddProductForm.html">
+                        <a class = "main-content__item" href="./adminAddProductForm.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Thêm sản phẩm</b>
                         </a>
