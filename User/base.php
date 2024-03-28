@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 :root{
     --white-color: #fff;
     --black-color: #000;
@@ -33,7 +34,7 @@ html{
     align-items: center;
     justify-content: center;
     line-height: 1.6rem;
-    background-color: #0d90df;
+    background-color: white;
 }
 /* Responsive */
 .grid{

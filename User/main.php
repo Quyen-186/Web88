@@ -1,3 +1,5 @@
+<?php header("Content-type: text/css"); ?>
+
 .app{
     display: flex;
     flex-direction: column;
@@ -6,7 +8,7 @@
 }
 .header{
    height: 142px;
-   background-image: linear-gradient(0, #2f2d2d, #313538);
+   background-image: linear-gradient(0, #ff4444, #ff4444);
 }
 
 .header__navbar{
@@ -51,6 +53,7 @@
 
 .header__logo{
     width: 200px;
+    border-radius:10px;
 }
 
 .header__logo-img{
@@ -167,7 +170,7 @@
 
 /* Home sort +filter */
 .home-filter{
-    background-color: #0d90df;
+    background-color: #00b4e8;
     display: flex;
     align-items: center;
     padding: 8px 22px;
@@ -184,6 +187,11 @@
 .home-filter__btn{
     min-width: 90px;
     margin-right: 12px;
+    --white-color: #000
+}
+
+.home-filter__button{
+    color: black;
 }
 
 .home-filter__btn:hover{
@@ -280,7 +288,7 @@
 
 /* footer */
 .footer {
-    background-color: #0d90df;
+    background-color: #ff4444;
     margin-top: 20px;
     padding-top: 16px;
 }
