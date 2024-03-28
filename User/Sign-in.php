@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Sign-up.css">
-    <title>Wheystore - Đăng nhập</title>
+    <title>Roid Supplement - Cung cấp dược phẩm kích thích tăng cơ kém chất lượng</title>
 </head>
 <body>
     <form action="./user.php" style="border:1px solid #ccc">
@@ -20,10 +20,10 @@
         <input type="password" placeholder="Mật khẩu" name="psw" required>
     
         <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ mật khẩu
         </label>
         
-        <p>Bạn mới biết đến WheyStore ? <a href="./Sign-up.php" style="color:dodgerblue">Đăng ký</a>.</p>
+        <p>Bạn mới biết đến Roid Supplement? <a href="./Sign-up.php" style="color:dodgerblue">Đăng ký</a>.</p>
     
         <div class="clearfix">
           <button type="button" class="cancelbtn">Hủy</button>

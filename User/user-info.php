@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        WheyStore - Dinh dưỡng, thực phẩm thể hình, Gym hàng giả.
-    </title>
-    <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
+    <?php include_once ('layout/head.php'); ?>
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="user.css">
 </head>
+
 <body>
     <div class="app">
         <header class="header">
             <div class="grid">
-                <nav class="header__navbar"> 
+                <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item">
+                        <!-- <li class="header__navbar-item">
                             Hotline: 091.901.3030
                         </li>
                         <li class="header__navbar-item">
@@ -29,22 +21,21 @@
                             <a href="" class="header__navbar-icon-link">
                                 <i class="fa-brands fa-facebook"></i>
                             </a>  
-                        </li>
+                        </li> -->
                     </ul>
-    
+
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item">
                             <i class="fa-solid fa-bell"></i>
                             <a href="" class="header__navbar-item-link">Thông báo</a>
                         </li>
+
                         <li class="header__navbar-item">
-                            <i class="fa-regular fa-circle-question"></i>
-                            <a href="" class="header__navbar-item-link">Trợ giúp</a>
-                        </li>
-                        <li class="header__navbar-item">
-                            <a href="./user-info.php" class="user-header__profile-img-name" style="text-decoration: none;">
-                                <img src="./Ảnh web admin/387123461_1563644207508135_2222331430281718689_n.jpg" alt="" class="user-header__profile-img">
-                                <span class="user-header__profile-name">Thựn Mapdit</span>
+                            <a href="./user-info.php" class="user-header__profile-img-name"
+                                style="text-decoration: none;">
+                                <img src="./Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png" alt=""
+                                    class="user-header__profile-img">
+                                <span class="user-header__profile-name">Adu Ăng Minh</span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
@@ -54,25 +45,26 @@
                 </nav>
 
                 <!-- Header with search -->
-                <div class="header-with-search" >
+                <div class="header-with-search">
                     <div class="header__logo">
-                        <img src="./Ảnh logo/logo_image_1587131466.png" alt="" class="header__logo-img">
+                        <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
                     </div>
 
                     <div class="header__search">
-                        <input type="text" id="inputField" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+                        <input type="text" id="inputField" class="header__search-input"
+                            placeholder="Nhập để tìm kiếm sản phẩm">
                         <div class="header__search-btn">
                             <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                         </div>
                     </div>
 
                     <div class="header__cart">
-                        <a href="./cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a> 
-                    </div>   
-                </div>            
+                        <a href="./cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
             </div>
         </header>
-        
+
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
@@ -82,7 +74,7 @@
                                 <i class="category__heading-icon fas fa-list"></i>
                                 Danh mục
                             </h3>
-    
+
                             <ul class="category-list">
                                 <li class="category-item category-item__active">
                                     <a href="./user-info.php" class="category-item__link">Tài khoản của tôi</a>
@@ -108,39 +100,40 @@
                                         <table class="table-info">
                                             <tr>
                                                 <td class="title-info">
-                                                    Biệt danh admin	
+                                                    Admin Username:
                                                 </td>
-                                                <td class="detailed-info">Thựn Mapdit</td>
+                                                <td class="detailed-info">Adu Ăng Minh</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Tên	
+                                                    Họ và Tên:
                                                 </td>
-                                                <td class="detailed-info">Đào Quốc Thuận</td>
+                                                <td class="detailed-info">Nguyễn Vũ Minh</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Email
+                                                    Email:
                                                 </td>
-                                                <td class="detailed-info">cr7depdzai1903@gmail.com</td>
+                                                <td class="detailed-info">aduanhminh@gmail.com</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Số điện thoại
+                                                    Số điện thoại:
                                                 </td>
                                                 <td class="detailed-info">0703574404</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Ngày sinh	
+                                                    Ngày sinh:
                                                 </td>
-                                                <td class="detailed-info">04-03-2004</td>
+                                                <td class="detailed-info">01-04-2004</td>
                                             </tr>
                                         </table>
                                     </div>
                                     <div class="admin-grid__column-3">
                                         <div class="admin__profile-img">
-                                            <img src="./Ảnh web admin/326761819_835523774178349_2860054589749148865_n.jpg" alt="" class="profile-img__miniface">
+                                            <img src="./Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png"
+                                                alt="" class="profile-img__miniface">
                                             <div class="admin__upload-img-btn btn">Chọn ảnh</div>
                                         </div>
                                     </div>
@@ -148,112 +141,13 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
-        <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">GIỚI THIỆU CHUNG</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    Giới thiệu về WheyStore</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    Hướng dẫn đặt hàng
-                                </a>
-                            </li>                                
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    Hướng dẫn thanh toán
-                                </a>
-                            </li>    
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">CHÍNH SÁCH CHUNG</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Chính sách dữ liệu</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Chính sách bảo mật</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Chính sách kinh doanh</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">THÔNG TIN CẦN BIẾT</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Kiểm tra tích điểm</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Hướng dẫn tập gym</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Chế độ dinh dưỡng</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">VỀ CHÚNG TÔI</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Tư vấn và đặt hàng: <br> 091.901.3030</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Phục vụ tất cả các ngày trong tuần</a>
-                            </li>
-                            <li class="footer-item">     
-                                <a href="" class="footer-item__link">Bắt đầu mở cửa bán hàng từ 8h30</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">FACEBOOK FANPAGE</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    <i class="fa-brands fa-facebook"></i>
-                                    Facebook
-                                </a>
-                            </li>
-                            <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                    <i class="fa-brands fa-square-instagram"></i>
-                                    Instagram
-                                </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link"><img src="./Ảnh footer/IyxQtiu.png" alt="" class="footer-img"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="copyright-information">
-                <div class="grid">
-                    <p class="footer-text">
-                        Tất cả các sản phẩm mà Wheystore bán không phải là thuốc, không thể thay thế thuốc chữa bệnh.
-                    </p>
-                    <p class="footer-text">
-                        Hiệu quả khi dùng sản phẩm còn tùy thuộc vào cơ địa và chế độ ăn uống, sinh hoạt, tập luyện của mỗi người.
-                    </p>
-                    <p class="footer-text">
-                        Vận hành website bởi Công ty TNHH WheyStore Việt Nam - MST: 0110419361 - Đại diện pháp luật: Trần Xuân Phong. Email: info@wheystore.vn
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <?php include_once ('layout/footer.php'); ?>
     </div>
-    <!-- <script src="main.js"></script> -->
+
 </body>
+
 </html>

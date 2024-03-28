@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .user-header__profile-img-name{
     display: flex;
 }

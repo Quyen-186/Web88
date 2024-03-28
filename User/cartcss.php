@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .cart-title {
     font-size: 1.5rem;
     color: var(--text-color);

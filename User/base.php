@@ -19,6 +19,23 @@ html{
 }
 
 /* button style */
+.button{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+    background-color: #00b4e8;
+}
 .btn{
     min-width: 124px;
     height: 34px;

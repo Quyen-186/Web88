@@ -1,7 +1,4 @@
-/* .app__container-order {
-    background-color: rgba(0, 0, 0, 0.05);
-} */
-/* Thanh liên kết trang */
+<?php header("Content-type: text/css"); ?>
 .progress-bar {
     background-color: #eee;
     display: flex;

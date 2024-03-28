@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;

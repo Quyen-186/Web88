@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Sign-up.css">
-    <title>Wheystore - Đăng ký</title>
+    <title>Roid Supplement - Cung cấp dược phẩm kích thích tăng cơ kém chất lượng</title>
 </head>
     
 <body>
@@ -33,11 +33,11 @@
         <label for="psw"><b>Mật khẩu</b></label>
         <input type="password" placeholder="Mật khẩu" name="psw" required>
     
-        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <label for="psw-repeat"><b>Nhập lại mật khẩu</b></label>
         <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
         
         <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ mật khẩu
         </label>
     
         <div class="clearfix">

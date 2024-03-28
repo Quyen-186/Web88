@@ -85,20 +85,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="copyright-information">
-        <div class="grid">
-            <p class="footer-text">
-                Tất cả các sản phẩm mà Wheystore bán không phải là thuốc, không thể thay thế thuốc chữa bệnh.
-            </p>
-            <p class="footer-text">
-                Hiệu quả khi dùng sản phẩm còn tùy thuộc vào cơ địa và chế độ ăn uống, sinh hoạt, tập luyện của mỗi
-                người.
-            </p>
-            <p class="footer-text">
-                Vận hành website bởi Công ty TNHH WheyStore Việt Nam - MST: 0110419361 - Đại diện pháp luật: Trần Xuân
-                Phong. Email: info@wheystore.vn
-            </p>
-        </div>
-    </div> -->
 </footer>

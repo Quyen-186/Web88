@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .admin-header {
   height: 56px;
   background-image: linear-gradient(0, #2f2d2d, #313538);

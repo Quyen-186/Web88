@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        ADMIN - QUẢN LÝ NGƯỜI DÙNG
-    </title>
-    <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="main_detailed_page.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
+<?php include_once ('layout/head.php'); ?>
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="user.css">
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="adminUserManagement.css">
     <link rel="stylesheet" href="adminOrderManagement.css">

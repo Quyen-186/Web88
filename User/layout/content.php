@@ -19,9 +19,9 @@
                         <i class="fa-solid fa-bell"></i>
                         <a href="./Sign-in.php" class="header__navbar-item-link">Thông báo</a>
                     </li>
-                    <li class="header__navbar-item">
+                    <!-- <li class="header__navbar-item">
                         <i class="fa-regular fa-circle-question"></i>
-                        <a href="./Sign-in.php" class="header__navbar-item-link">Trợ giúp</a>
+                        <a href="./Sign-in.php" class="header__navbar-item-link">Trợ giúp</a> -->
                     </li>
                     <li class="header__navbar-item ">
                         <a href="./Sign-up.php" class="header__navbar-item-link">Đăng ký</a>
