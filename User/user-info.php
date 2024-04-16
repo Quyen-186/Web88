@@ -3,8 +3,8 @@
 
 <head>
     <?php include_once ('layout/head.php'); ?>
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="admin.php">
+    <link rel="stylesheet" href="usercss.php">
 </head>
 
 <body>

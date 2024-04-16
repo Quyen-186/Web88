@@ -8,13 +8,13 @@
         ADMIN - QUẢN LÝ NGƯỜI DÙNG
     </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="adminUserManagement.css">
-    <link rel="stylesheet" href="adminProductManagement.css">
+    <link rel="stylesheet" href="resetcss.php">
+    <link rel="stylesheet" href="maincss.php">
+    <link rel="stylesheet" href="basecss.php">
+    <link rel="stylesheet" href="fontscss.php">
+    <link rel="stylesheet" href="admincss.php">
+    <link rel="stylesheet" href="adminUserManagementcss.php">
+    <link rel="stylesheet" href="adminProductManagementcss.php">
 </head>
 <body>
     <div class="app">

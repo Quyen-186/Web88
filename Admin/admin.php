@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        ADMIN - TRANG CHỦ
-    </title>
+<link rel="shortcut icon" href="./Ảnh logo/logo 1_1615870157.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+    Roid Supplement - Cung cấp dược phẩm kích thích tăng cơ kém chất lượng
+</title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="resetcss.php">
+    <link rel="stylesheet" href="maincss.php">
+    <link rel="stylesheet" href="basecss.php">
+    <link rel="stylesheet" href="fontscss.php">
+    <link rel="stylesheet" href="admincss.php">
     
 </head>
 <body>

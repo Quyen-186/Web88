@@ -8,13 +8,13 @@
         ADMIN - THÊM SẢN PHẨM
     </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="main_detailed_page.css">
-    <link rel="stylesheet" href="paymentForm.css">
+    <link rel="stylesheet" href="resetcss.php">
+    <link rel="stylesheet" href="maincss.php">
+    <link rel="stylesheet" href="basecss.php">
+    <link rel="stylesheet" href="fontscss.php">
+    <link rel="stylesheet" href="admincss.php">
+    <link rel="stylesheet" href="main_detailed_pagecss.php">
+    <link rel="stylesheet" href="paymentFormcss.php">
 </head>
 <body>
     <div class="app">
@@ -46,12 +46,12 @@
             <div class="grid">  
                 <div class="progress-bar">
                     <div class="progress-bar__main-content">
-                        <a class = "main-content__item" href="./admin.php"><b>Trang chủ</b></a>
-                        <a class = "main-content__item" href="./adminProductManagement.php">
+                        <a class = "main-content__item" href="./admincss.php"><b>Trang chủ</b></a>
+                        <a class = "main-content__item" href="./adminProductManagementcss.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Quản lý sản phẩm</b>
                         </a>
-                        <a class = "main-content__item" href="./adminAddProductForm.php">
+                        <a class = "main-content__item" href="./adminAddProductFormcss.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Thêm sản phẩm</b>
                         </a>

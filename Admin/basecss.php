@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 :root{
     --white-color: #fff;
     --black-color: #000;

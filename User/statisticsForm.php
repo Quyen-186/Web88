@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <?php include_once ('layout/head.php'); ?>
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="user.css">
-    <link rel="stylesheet" href="cart.css">
-    <link rel="stylesheet" href="adminUserManagement.css">
-    <link rel="stylesheet" href="adminOrderManagement.css">
+    <link rel="stylesheet" href="admin.php">
+    <link rel="stylesheet" href="usercss.php">
+    <link rel="stylesheet" href="cartcss.php">
+    <link rel="stylesheet" href="adminUserManagementcss.php">
+    <link rel="stylesheet" href="adminOrderManagementcss.php">
     <style>
         .order__info-user {
             margin: 30px 0 0 35px;

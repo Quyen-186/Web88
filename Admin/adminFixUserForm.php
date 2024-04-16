@@ -8,13 +8,13 @@
         ADMIN - SỬA THÔNG TIN NGƯỜI DÙNG
     </title>
     <link rel="stylesheet" href="./Fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="fonts.css">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="main_detailed_page.css">
-    <link rel="stylesheet" href="paymentForm.css">
+    <link rel="stylesheet" href="resetcss.php">
+    <link rel="stylesheet" href="maincss.php">
+    <link rel="stylesheet" href="basecss.php">
+    <link rel="stylesheet" href="fontscss.php">
+    <link rel="stylesheet" href="admincss.php">
+    <link rel="stylesheet" href="main_detailed_pagecss.php">
+    <link rel="stylesheet" href="paymentFormcss.php">
 </head>
 <body>
     <div class="app">

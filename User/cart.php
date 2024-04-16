@@ -3,10 +3,10 @@
 <head>
     <?php include_once ('layout/head.php'); ?>
     <link rel="stylesheet" href="./main_detailed_page.php">
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="user.css">
-    <link rel="stylesheet" href="order.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="admin.php">
+    <link rel="stylesheet" href="usercss.php">
+    <link rel="stylesheet" href="ordercss.php">
+    <link rel="stylesheet" href="cartcss.php">
 </head>
 <body>
     <div class="app">

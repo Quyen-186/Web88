@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .user-management {
     display: flex;
     justify-content: center;

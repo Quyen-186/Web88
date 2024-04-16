@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .app{
     display: flex;
     flex-direction: column;

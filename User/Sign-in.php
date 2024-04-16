@@ -4,7 +4,7 @@
     <link rel="shortcut icon" href="./Ảnh logo/372986215_692178822950132_2957802616111635882_n (1).jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Sign-up.css">
+    <link rel="stylesheet" href="Sign-upcss.php">
     <title>Roid Supplement - Cung cấp dược phẩm kích thích tăng cơ kém chất lượng</title>
 </head>
 <body>

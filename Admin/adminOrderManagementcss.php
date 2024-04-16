@@ -1,3 +1,4 @@
+<?php header("Content-type: text/css"); ?>
 .om-header__search{
     background-color: var(--white-color);
     flex: 1;

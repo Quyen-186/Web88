@@ -1,3 +1,7 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'admin');
-?>
+    $mysqli = new mysqli('localhost','root','','admin');
+    // Check connection
+    if ($mysqli -> connect_errno) {
+      echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+      exit();
+    }
