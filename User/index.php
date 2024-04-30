@@ -77,7 +77,7 @@
                                     <a href="./Sign-in.php" class="category-item__link">Sữa tăng cân</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./Sign-in.php" class="category-item__link">Whey Protein hello world</a>
+                                    <a href="./Sign-in.php" class="category-item__link">Whey Protein</a>
                                 </li>
                             </ul>
                         </nav>
