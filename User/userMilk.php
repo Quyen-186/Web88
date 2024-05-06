@@ -77,13 +77,13 @@
 
                             <ul class="category-list">
                                 <li class="category-item category-item__active">
-                                    <a href="./user.php" class="category-item__link">Trang chủ</a>
+                                    <a href="./user.php" class="category-item__link">Sản phẩm hot</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="./userMilk.php" class="category-item__link">Sữa tăng cân</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./userWhey.php" class="category-item__link">Whey Protein</a>
+                                    <a href="./userWhey.php" class="category-item__link">Tăng cơ bắp</a>
                                 </li>
                             </ul>
                         </nav>
@@ -94,7 +94,7 @@
                             <span class="home-filter__label">Tìm kiếm nâng cao</span>
                             <select class="home-filter__btn btn">
                                 <option value="Sữa tăng cân">Sữa tăng cân</option>
-                                <option value="Whey Protein">Whey Protein</option>
+                                <option value="Tăng cơ bắp">Tăng cơ bắp</option>
 
                             </select>
 

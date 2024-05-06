@@ -72,7 +72,7 @@
             <div class="grid">  
                 <div class="progress-bar">
                     <div class="progress-bar__main-content">
-                        <a class = "main-content__item" href="./index.php"><b>Trang chủ</b></a>
+                        <a class = "main-content__item" href="./index.php"><b>Sản phẩm hot</b></a>
                         <a class = "main-content__item" href="./user-info.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Thông tin người dùng</b>

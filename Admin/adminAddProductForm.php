@@ -46,7 +46,7 @@
             <div class="grid">  
                 <div class="progress-bar">
                     <div class="progress-bar__main-content">
-                        <a class = "main-content__item" href="./admincss.php"><b>Trang chủ</b></a>
+                        <a class = "main-content__item" href="./admincss.php"><b>Sản phẩm hot</b></a>
                         <a class = "main-content__item" href="./adminProductManagementcss.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Quản lý sản phẩm</b>

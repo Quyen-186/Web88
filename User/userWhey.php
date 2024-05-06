@@ -1,3 +1,16 @@
+<?php
+session_start();
+// Validate session on each page
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page or other appropriate action
+    header("Location: Sign-in.php");
+    exit();
+}
+include_once ('layout/head.php');
+include_once ('../connection.php');
+include_once ('search.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,13 +90,13 @@
 
                             <ul class="category-list">
                                 <li class="category-item category-item__active">
-                                    <a href="./user.php" class="category-item__link">Trang chủ</a>
+                                    <a href="./user.php" class="category-item__link">Sản phẩm hot</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="./userMilk.php" class="category-item__link">Sữa tăng cân</a>
                                 </li>
                                 <li class="category-item">
-                                    <a href="./userWhey.php" class="category-item__link">Whey Protein</a>
+                                    <a href="./userWhey.php" class="category-item__link">Tăng cơ bắp</a>
                                 </li>
                             </ul>
                         </nav>
@@ -94,7 +107,7 @@
                             <span class="home-filter__label">Tìm kiếm nâng cao</span>
                             <select class="home-filter__btn btn">
                                 <option value="Sữa tăng cân">Sữa tăng cân</option>
-                                <option value="Whey Protein">Whey Protein</option>
+                                <option value="Tăng cơ bắp">Tăng cơ bắp</option>
 
                             </select>
 
@@ -103,7 +116,7 @@
                                 <option value="">Giá: cao đến thấp</option>
                             </select>
 
-                            <a href="./userWhey.php">
+                            <a href="userWhey.php">
                                 <button class="home-filter__btn btn" style="background-color: orange;">Tìm</button>
                             </a>
 
@@ -116,7 +129,7 @@
                                     <a href="./user.php" class="home-filter__page-btn home-filter__page-btn--disabled">
                                         <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
                                     </a>
-                                    <a href="./userPage2.php" class="home-filter__page-btn">
+                                    <a href="userPage2.php" class="home-filter__page-btn">
                                         <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
                                     </a>
                                 </div>
@@ -126,9 +139,9 @@
                         <div class="home-product">
                             <div class="grid__row">
                                 <div class="grid__column-2-4">
-                                    <a class="home-product-item" href="./detailed-page__whey-1.php">
+                                    <a class="home-product-item" href="detailed-page__whey-1.php">
                                         <div class="home-product-item__img">
-                                            <img src="./Ảnh sản phẩm whey protein bán chạy/upl_hydro_whey_zero_1677554718_image_1677554718.jpg"
+                                            <img src="Ảnh sản phẩm whey protein bán chạy/6.png"
                                                 alt="" class="home-product-item__img">
                                             <h4 class="home-product-item__name">
                                                 Up Your Mass XXXL 1350 12lbs
@@ -140,9 +153,51 @@
                                     </a>
                                 </div>
                                 <div class="grid__column-2-4">
-                                    <a class="home-product-item" href="./detailed-page__whey-2.php">
+                                    <a class="home-product-item" href="detailed-page__whey-2.php">
                                         <div class="home-product-item__img">
-                                            <img src="./Ảnh sản phẩm whey protein bán chạy/upl_iso_hd_5lbs_100__isolate_1677568826_image_1677568826.jpg"
+                                            <img src="Ảnh sản phẩm whey protein bán chạy/7.png"
+                                                alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                EliteLab Mass Muscle Gainer 20lbs
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="detailed-page__whey-2.php">
+                                        <div class="home-product-item__img">
+                                            <img src="Ảnh sản phẩm whey protein bán chạy/8.png"
+                                                alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                EliteLab Mass Muscle Gainer 20lbs
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="detailed-page__whey-2.php">
+                                        <div class="home-product-item__img">
+                                            <img src="Ảnh sản phẩm whey protein bán chạy/9.png"
+                                                alt="" class="home-product-item__img">
+                                            <h4 class="home-product-item__name">
+                                                EliteLab Mass Muscle Gainer 20lbs
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-current"><b>1.500.000đ</b></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="detailed-page__whey-2.php">
+                                        <div class="home-product-item__img">
+                                            <img src="Ảnh sản phẩm whey protein bán chạy/10.png"
                                                 alt="" class="home-product-item__img">
                                             <h4 class="home-product-item__name">
                                                 EliteLab Mass Muscle Gainer 20lbs

@@ -54,7 +54,7 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./admin.php" class="category-item__link">TRANG CHỦ</a>
+                                    <a href="./admin.php" class="category-item__link">Sản phẩm hot</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="./adminUserManagement.php" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
@@ -85,7 +85,7 @@
                                 <label for="">Loại sản phẩm</label>
                                 <select name="" id="">
                                     <option value="">Sữa tăng cân</option>
-                                    <option value="">Whey Protein</option>
+                                    <option value="">Tăng cơ bắp</option>
                                 </select>
                                 <br><br>
                                 <label for="" class="search-date__from">Từ:</label>

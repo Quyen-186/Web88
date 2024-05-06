@@ -64,7 +64,7 @@
   border-radius: 50%;
 }
 
-/* Danh mục -> Trang chủ */
+/* Danh mục -> Sản phẩm hot */
 
 .profile-title {
   text-transform: uppercase;

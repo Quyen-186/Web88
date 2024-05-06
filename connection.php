@@ -1,7 +1,9 @@
 <?php
-    $mysqli = new mysqli('localhost','root','','admin');
-    // Check connection
-    if ($mysqli -> connect_errno) {
-      echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-      exit();
-    }
+$mysqli = new mysqli('localhost', 'root', '', 'admin');
+// Check connection
+if ($mysqli->connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+  exit();
+} 
+?>
+

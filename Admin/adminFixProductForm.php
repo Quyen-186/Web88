@@ -52,7 +52,7 @@
             <div class="grid">  
                 <div class="progress-bar">
                     <div class="progress-bar__main-content">
-                        <a class = "main-content__item" href="./admin.php"><b>Trang chủ</b></a>
+                        <a class = "main-content__item" href="./admin.php"><b>Sản phẩm hot</b></a>
                         <a class = "main-content__item" href="./adminUserManagement.php">
                             <i class="fa-solid fa-arrow-right"></i>
                             <b>Quản lý người dùng</b>
@@ -88,7 +88,7 @@
                                         <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Tên sản phẩm trước đó: Up Your Mass XXXL 1350 12lbs">
 
                                         <label for="fname" style="font-size: 1.5rem;"><i></i> <b>Phân loại</b></label>
-                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Phân loại trước đó: Whey Protein">
+                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;" placeholder="Phân loại trước đó: Tăng cơ bắp">
 
                                         <label for="email" style="font-size: 1.5rem;"><i></i> Giá</label>
                                         <input type="text" id="email" name="email" style="font-size: 1.5rem;" placeholder="Giá trước đó 1.500.000 đ">

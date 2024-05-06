@@ -71,8 +71,16 @@ html{
     flex-wrap: wrap;
     margin-left: -5px;
     margin-right: -5px;
+    height: auto;
 }
 
+.grid__row1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+    height:auto;
+}
 .admin-grid__row {
     display: flex;
     flex-direction: column;
@@ -104,10 +112,12 @@ html{
     background-color: white;
 }
 
-.grid__column-2-4 {
+.grid__row-2-4 {
+    display: flex;
+    flex-wrap: wrap;
     margin-left: 5px;
     margin-right: 5px;
-    width: 19%;
+    width: 19%; 
 }
 
 .grid__column-5 {

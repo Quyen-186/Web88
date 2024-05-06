@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    // Validate session on each page
+    if (!isset($_SESSION['username'])) {
+    // Redirect to login page or other appropriate action
+    header("Location: login.php");
+    exit();
+}
+    include_once ('layout/head.php');
+    include_once ('../connection.php');
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +76,7 @@
                 <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="./admin.php"><b>Trang chủ</b></a>
+                            <a class = "main-content__item" href="./admin.php"><b>Sản phẩm hot</b></a>
                             <a class = "main-content__item" href="./adminStatistics.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Thống kê</b>
