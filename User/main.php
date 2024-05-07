@@ -253,8 +253,10 @@
 .home-product{
     margin-bottom: 10px;
     height: auto;
+    width:auto;
     display: flex;
     flex-wrap: wrap;
+    padding-left:17px;
 }
 
 .home-product1{

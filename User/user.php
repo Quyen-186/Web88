@@ -10,6 +10,16 @@ include_once ('layout/head.php');
 include_once ('../connection.php');
 include_once ('search.php');
 
+// Determine which page to display
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$productsPerPage = 5;
+$totalPages = ceil(count($products) / $productsPerPage);
+
+// Calculate the index of the first product to display on the current page
+$startIndex = ($page - 1) * $productsPerPage;
+// Calculate the index of the last product to display on the current page
+$endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,26 +82,6 @@ include_once ('search.php');
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
-                    <div class="grid__column-2">
-                        <nav class="category">
-                            <h3 class="category__heading">
-                                <i class="category__heading-icon fas fa-list"></i>
-                                Danh mục
-                            </h3>
-
-                            <ul class="category-list">
-                                <li class="category-item category-item__active">
-                                    <a href="user.php" class="category-item__link">Sản phẩm hot</a>
-                                </li>
-                                <li class="category-item">
-                                    <a href="userMilk.php" class="category-item__link">Sữa tăng cân</a>
-                                </li>
-                                <li class="category-item">
-                                    <a href="userWhey.php" class="category-item__link">Tăng cơ bắp</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
 
                     <div class="grid__column-10">
                         <div class="home-filter">
@@ -107,42 +97,45 @@ include_once ('search.php');
                                 <option value="">Giá: cao đến thấp</option>
                             </select>
 
-                            <a href="userMilk.php">
+                            <a href="user.php?page=1">
                                 <button class="home-filter__btn btn" style="background-color: orange;">Tìm</button>
                             </a>
 
                             <div class="home-filter__page">
                                 <span class="home-filter__page-num">
-                                    <span class="home-filter__page-current">1</span>/2
+                                    <span
+                                        class="home-filter__page-current"><?php echo $page; ?></span>/<?php echo $totalPages; ?>
                                 </span>
 
                                 <div class="home-filter__page-control">
-                                    <a href="user.php" class="home-filter__page-btn home-filter__page-btn--disabled">
-                                        <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
-                                    </a>
-                                    <a href="userPage2.php" class="home-filter__page-btn">
-                                        <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
-                                    </a>
+                                    <?php if ($page > 1): ?>
+                                        <a href="user.php?page=<?php echo ($page - 1); ?>" class="home-filter__page-btn">
+                                            <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if ($page < $totalPages): ?>
+                                        <a href="user.php?page=<?php echo ($page + 1); ?>" class="home-filter__page-btn">
+                                            <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
 
                         <div class="home-product">
-                            <?php foreach ($products as $product): ?>
-                                <a href="detailed-page__milk-1.php?product_id=<?php echo $product['product_id']; ?>">
-
+                            <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
+                                <a href="detailed-page__milk-1.php?product_id=<?php echo $products[$i]['product_id']; ?>">
                                     <div class="home-product-item">
-                                        <img src="<?php echo $product['image_url']; ?>" alt=""
+                                        <img src="<?php echo $products[$i]['image_url']; ?>" alt=""
                                             class="home-product-item__img">
-                                        <h4 class="home-product-item__name"><?php echo $product['name']; ?></h4>
+                                        <h4 class="home-product-item__name"><?php echo $products[$i]['name']; ?></h4>
                                         <div class="home-product-item__price">
                                             <span
-                                                class="home-product-item__price-current"><b><?php echo $product['price'] ?></b>
-                                            </span>
+                                                class="home-product-item__price-current"><b><?php echo $products[$i]['price']; ?></b></span>
                                         </div>
                                     </div>
                                 </a>
-                            <?php endforeach; ?>
+                            <?php endfor; ?>
                         </div>
                     </div>
                 </div>

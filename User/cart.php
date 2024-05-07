@@ -1,5 +1,70 @@
 <?php
-    session_start();
+session_start();
+// Validate session on each page
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page or other appropriate action
+    header("Location: Sign-in.php");
+    exit();
+}
+
+
+// Function to add a product to the cart
+function addToCart($productId, $quantity) {
+    $_SESSION['cart'][$productId] += $quantity;
+}
+
+// Function to remove a product from the cart
+function removeFromCart($productId) {
+    unset($_SESSION['cart'][$productId]);
+}
+
+// Function to update the quantity of a product in the cart
+function updateQuantity($productId, $quantity) {
+    if ($quantity <= 0) {
+        removeFromCart($productId);
+    } else {
+        $_SESSION['cart'][$productId] = $quantity;
+    }
+}
+
+// Function to calculate the total price of items in the cart
+function calculateTotal() {
+    $total = 0;
+    foreach ($_SESSION['cart'] as $productId => $quantity) {
+        // Fetch product price from database or other source
+        $productPrice = getProductPriceById($productId);
+        $total += $productPrice * $quantity;
+    }
+    return $total;
+}
+
+// Function to display the cart contents
+function displayCart() {
+    echo "<h2>Shopping Cart</h2>";
+    if (empty($_SESSION['cart'])) {
+        echo "<p>Your cart is empty.</p>";
+    } else {
+        foreach ($_SESSION['cart'] as $productId => $quantity) {
+            // Fetch product details from database or other source
+            $product = getProductById($productId);
+            echo "<p>{$product['name']} - Quantity: $quantity</p>";
+        }
+        echo "<p>Total: $" . calculateTotal() . "</p>";
+    }
+}
+
+// Sample usage:
+// Add a product to the cart
+addToCart(1, 2);
+// Remove a product from the cart
+removeFromCart(1);
+// Update the quantity of a product in the cart
+updateQuantity(2, 3);
+
+// Display the cart contents
+displayCart();
+?>
+
     include_once ('layout/head.php');
     include_once ('../connection.php');
 ?> 

@@ -106,9 +106,7 @@ html{
 }
 
 .grid__column-10{
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 83.3333%;
+    width: 100%;
     background-color: white;
 }
 
