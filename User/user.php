@@ -20,7 +20,9 @@ $startIndex = ($page - 1) * $productsPerPage;
 // Calculate the index of the last product to display on the current page
 $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
 
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,13 +66,15 @@ $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
                         <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
                     </div>
 
-                    <div class="header__search">
-                        <input type="text" id="inputField" class="header__search-input"
+
+                    <form action="user.php" method="GET" class="header__search">
+                        <input type="text" name="search" id="inputField" class="header__search-input"
                             placeholder="Nhập để tìm kiếm sản phẩm">
                         <div class="header__search-btn">
-                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            <button type="submit" class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                         </div>
-                    </div>
+                    </form>
+
 
                     <div class="header__cart">
                         <a href="cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
@@ -87,9 +91,10 @@ $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
                         <div class="home-filter">
                             <span class="home-filter__label">Tìm kiếm nâng cao</span>
                             <select class="home-filter__btn btn">
-                                <option value="Sữa tăng cân">Sữa tăng cân</option>
-                                <option value="Tăng cơ bắp">Tăng cơ bắp</option>
-
+                                <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
+                                    <option value="Sữa tăng cân"><?php echo $products[$i]['category_name'] ?></option>
+                                    
+                                <?php endfor; ?>
                             </select>
 
                             <select class="home-filter__btn btn">
@@ -141,8 +146,9 @@ $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
                 </div>
             </div>
         </div>
-        <?php include_once ('layout/footer.php'); ?>
+
     </div>
+    <?php include_once ('layout/footer.php'); ?>
 </body>
 
 </html>

@@ -4,6 +4,15 @@ session_start();
 include_once ('layout/head.php');
 include_once ('../connection.php');
 include_once ('search.php');
+// Determine which page to display
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$productsPerPage = 5;
+$totalPages = ceil(count($products) / $productsPerPage);
+
+// Calculate the index of the first product to display on the current page
+$startIndex = ($page - 1) * $productsPerPage;
+// Calculate the index of the last product to display on the current page
+$endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
 
 ?>
 <!DOCTYPE html>
@@ -27,10 +36,10 @@ include_once ('search.php');
                         </li>
                         </li>
                         <li class="header__navbar-item ">
-                            <a href="./Sign-up.php" class="header__navbar-item-link">Đăng ký</a>
+                            <a href="Sign-up.php" class="header__navbar-item-link">Đăng ký</a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./Sign-in.php" class="header__navbar-item-link">Đăng nhập</a>
+                            <a href="Sign-in.php" class="header__navbar-item-link">Đăng nhập</a>
                         </li>
                     </ul>
                 </nav>
@@ -38,7 +47,7 @@ include_once ('search.php');
                 <!-- Header with search -->
                 <div class="header-with-search">
                     <div class="header__logo">
-                        <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
+                        <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
                     </div>
                     <div class="header__search">
                         <input type="text" id="inputField" class="header__search-input" onclick="indexClick()"
@@ -48,7 +57,7 @@ include_once ('search.php');
                         </div>
                     </div>
                     <div class="header__cart">
-                        <a href="./sign-in.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
+                        <a href="Sign-in.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
             </div>
@@ -58,19 +67,7 @@ include_once ('search.php');
             <div class="grid">
                 <div class="grid__row app__content">
                     <div class="grid__column-2">
-                        <nav class="category">
-                            <h3 class="category__heading">
-                                <i class="category__heading-icon fas fa-list"></i>
-                                Danh mục
-                            </h3>
-
-                            <ul class="category-list">
-                                <li class="category-item category-item__active">
-                                    <a href="./Sign-in.php" class="category-item__link">Sản phẩm hot</a>
-                                </li>
-                                
-                            </ul>
-                        </nav>
+                        
                     </div>
                     <div class="grid__column-10">
                         <div class="home-filter">
@@ -94,36 +91,38 @@ include_once ('search.php');
 
                             <div class="home-filter__page">
                                 <span class="home-filter__page-num">
-                                    <span class="home-filter__page-current">1</span>/2
+                                    <span
+                                        class="home-filter__page-current"><?php echo $page; ?></span>/<?php echo $totalPages; ?>
                                 </span>
 
                                 <div class="home-filter__page-control">
-                                    <a href="./Sign-in.php"
-                                        class="home-filter__page-btn home-filter__page-btn--disabled">
-                                        <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
-                                    </a>
-                                    <a href="./Sign-in.php" class="home-filter__page-btn">
-                                        <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
-                                    </a>
+                                    <?php if ($page > 1): ?>
+                                        <a href="user.php?page=<?php echo ($page - 1); ?>" class="home-filter__page-btn">
+                                            <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if ($page < $totalPages): ?>
+                                        <a href="user.php?page=<?php echo ($page + 1); ?>" class="home-filter__page-btn">
+                                            <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="home-product">
-                        <?php foreach ($products as $product): ?>
-                                <a href="detailed-page__milk-1.php?product_id=<?php echo $product['product_id']; ?>">
-
+                            <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
+                                <a href="detailed-page__milk-1.php?product_id=<?php echo $products[$i]['product_id']; ?>">
                                     <div class="home-product-item">
-                                        <img src="<?php echo $product['image_url']; ?>" alt=""
+                                        <img src="<?php echo $products[$i]['image_url']; ?>" alt=""
                                             class="home-product-item__img">
-                                        <h4 class="home-product-item__name"><?php echo $product['name']; ?></h4>
+                                        <h4 class="home-product-item__name"><?php echo $products[$i]['name']; ?></h4>
                                         <div class="home-product-item__price">
                                             <span
-                                                class="home-product-item__price-current"><b><?php echo $product['price'] ?></b>
-                                            </span>
+                                                class="home-product-item__price-current"><b><?php echo $products[$i]['price']; ?></b></span>
                                         </div>
                                     </div>
                                 </a>
-                            <?php endforeach; ?>
+                            <?php endfor; ?>
                         </div>
                     </div>
                 </div>

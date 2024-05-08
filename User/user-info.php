@@ -13,15 +13,7 @@
             <div class="grid">
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        <!-- <li class="header__navbar-item">
-                            Hotline: 091.901.3030
-                        </li>
-                        <li class="header__navbar-item">
-                            Ghé fanpage
-                            <a href="" class="header__navbar-icon-link">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>  
-                        </li> -->
+                        
                     </ul>
 
                     <ul class="header__navbar-list">
@@ -68,7 +60,7 @@
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
-                    <div class="grid__column-2">
+                    <div class="grid__column-21">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -89,7 +81,7 @@
                         </nav>
                     </div>
 
-                    <div class="grid__column-10">
+                    <div class="grid__column-101">
                         <div class="home-product">
                             <div class="admin-grid__row">
                                 <div class="profile-title">

@@ -105,6 +105,20 @@ html{
     border-right: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.grid__column-21{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+    height:auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.grid__column-101{
+    width: 100%;
+    background-color: white;
+    height:auto;
+}
+
 .grid__column-10{
     width: 100%;
     background-color: white;
@@ -242,3 +256,26 @@ html{
     font-size: 1.2rem;
 }
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}

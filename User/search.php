@@ -3,7 +3,7 @@ if (isset($_GET['search'])) {
     $searchKeyword = $_GET['search'] ?? '';
 
     if (!empty($searchKeyword)) {
-        $stmt = $conn->prepare("SELECT * FROM sanpham WHERE name LIKE ?");
+        $stmt = $mysqli->prepare("SELECT * FROM sanpham WHERE name LIKE ?");
         $searchKeyword = "%$searchKeyword%";
         $stmt->bind_param("s", $searchKeyword);
         $stmt->execute();
@@ -20,7 +20,8 @@ if (isset($_GET['search'])) {
         echo "Từ khóa tìm kiếm không được để trống.";
     }
 } else {
-    $sql = "SELECT * FROM sanpham";
+    $sql = "SELECT * FROM sanpham
+        LEFT JOIN phanloai ON sanpham.category_id = phanloai.category_id";
     $result = $mysqli->query($sql);
 
     if ($result->num_rows > 0) {
