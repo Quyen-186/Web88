@@ -82,33 +82,33 @@
                                         <table class="table-info">
                                             <tr>
                                                 <td class="title-info">
-                                                    Biệt danh admin	
+                                                    Admin Name: 
                                                 </td>
-                                                <td class="detailed-info">Thựn khờ</td>
+                                                <td class="detailed-info">Gabr4ca</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Tên	
+                                                    	Name:
                                                 </td>
-                                                <td class="detailed-info">Đào Quốc Thuận</td>
+                                                <td class="detailed-info">Hồ Nguyên Minh</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Email
+                                                    Email: 
                                                 </td>
-                                                <td class="detailed-info">cr7depdzai1903@gmail.com</td>
+                                                <td class="detailed-info">3122411123@sv.sgu.edu.vn</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
                                                     Số điện thoại
                                                 </td>
-                                                <td class="detailed-info">0703574404</td>
+                                                <td class="detailed-info">99999999999</td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
-                                                    Ngày sinh	
+                                                    Ngày sinh: 
                                                 </td>
-                                                <td class="detailed-info">04-03-2004</td>
+                                                <td class="detailed-info">01-01-2000</td>
                                             </tr>
                                         </table>
                                     </div>

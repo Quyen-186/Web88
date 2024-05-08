@@ -43,6 +43,7 @@ html{
     /* những màn hình có kích thước nhỏ hơn 1200px thì nó fix lại nhỏ hơn 1200px*/
     max-width: 100%;
     margin: 0 auto;
+    height: 1000px;
 }
 
 .grid_full-width{
