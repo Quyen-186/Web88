@@ -8,14 +8,13 @@ if (isset($_POST['submit'])) {
   $address = $_POST['address'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-
-  // Validate and sanitize input if necessary
+  
   // Check for duplicate username
   $check_duplicate = "SELECT * FROM taikhoan WHERE username = '$username'";
   $result_duplicate = mysqli_query($mysqli, $check_duplicate);
   if (mysqli_num_rows($result_duplicate) > 0) {
-      echo "Tên tài khoản đã tồn tại.";
-      exit(); // Stop execution if username already exists
+    echo "Tên tài khoản đã tồn tại.";
+    exit(); // Stop execution if username already exists
   }
 
   $insert = "INSERT INTO taikhoan (username, password, name, address, phone, email, isadmin, status)

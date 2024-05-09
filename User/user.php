@@ -20,6 +20,34 @@ $startIndex = ($page - 1) * $productsPerPage;
 // Calculate the index of the last product to display on the current page
 $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
 
+// SQL query to fetch only the category_name column
+$haha = "SELECT DISTINCT category_name FROM phanloai";
+
+// Execute the query
+$ketqua = mysqli_query($mysqli, $haha);
+
+// Check if the query executed successfully
+if ($ketqua) {
+    // Initialize an array to store category names
+    $category_names = array();
+
+    // Fetch each row from the result set
+    while ($row = mysqli_fetch_assoc($ketqua)) {
+        // Access the category_name column from the fetched row
+        $category_names[] = $row['category_name'];
+    }
+
+    // Free the result set
+    mysqli_free_result($ketqua);
+} else {
+    // Handle the case where the query fails
+    echo "Error executing query: " . mysqli_error($mysqli);
+}
+
+if (isset($_POST['tim'])) {
+
+}
+include_once ('advanced.php');
 
 ?>
 
@@ -86,46 +114,58 @@ $endIndex = min($startIndex + $productsPerPage - 1, count($products) - 1);
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row app__content">
-
                     <div class="grid__column-10">
-                        <div class="home-filter">
-                            <span class="home-filter__label">Tìm kiếm nâng cao</span>
-                            <select class="home-filter__btn btn">
-                                <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
-                                    <option value="Sữa tăng cân"><?php echo $products[$i]['category_name'] ?></option>
-                                    
-                                <?php endfor; ?>
-                            </select>
+                        <form action="users.php" method="get">
+                            <div class="home-filter">
+                                <span class="home-filter__label"></span>
+                                <label class="home-filter__label" for="product_name">Tìm nâng cao </label>
+                                <input type="text" class="home-filter__btn1" id="product_name" placeholder="Tên sản phẩm" name="product_name"
+                                    value="<?php echo isset($_GET['name']) ? $_GET['name'] : ''; ?>">
+                                <select class="home-filter__btn btn">
+                                    <?php
+                                    foreach ($category_names as $category_name) {
+                                        $selected = ($_GET['category'] == $category_name) ? "selected" : "";
+                                        echo "<option value='" . $category_name . "'>" . $category_name . "</option>";
+                                    }
+                                    ?>
+                                </select>
 
-                            <select class="home-filter__btn btn">
-                                <option value="">Giá: thấp đến cao</option>
-                                <option value="">Giá: cao đến thấp</option>
-                            </select>
+                                    <input class="home-filter__btn1" type="number" id="min_price" name="min_price"
+                                        value="<?php echo isset($_GET['min_price']) ? $_GET['min_price'] : ''; ?>"
+                                        min="0" placeholder="Min">
+                                    <input class="home-filter__btn1" type="number" id="max_price" name="max_price"
+                                        value="<?php echo isset($_GET['max_price']) ? $_GET['max_price'] : ''; ?>"
+                                        min="0" placeholder="Max">
 
-                            <a href="user.php?page=1">
-                                <button class="home-filter__btn btn" style="background-color: orange;">Tìm</button>
-                            </a>
+                                <a href="user.php?page=1">
+                                    <input type="submit" value="Search" class="home-filter__btn btn"
+                                        style="background-color: orange;":>
+                                </a>
 
-                            <div class="home-filter__page">
-                                <span class="home-filter__page-num">
-                                    <span
-                                        class="home-filter__page-current"><?php echo $page; ?></span>/<?php echo $totalPages; ?>
-                                </span>
+                                <div class="home-filter__page">
+                                    <span class="home-filter__page-num">
+                                        <span
+                                            class="home-filter__page-current"><?php echo $page; ?></span>/<?php echo $totalPages; ?>
+                                    </span>
 
-                                <div class="home-filter__page-control">
-                                    <?php if ($page > 1): ?>
-                                        <a href="user.php?page=<?php echo ($page - 1); ?>" class="home-filter__page-btn">
-                                            <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
-                                        </a>
-                                    <?php endif; ?>
-                                    <?php if ($page < $totalPages): ?>
-                                        <a href="user.php?page=<?php echo ($page + 1); ?>" class="home-filter__page-btn">
-                                            <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
-                                        </a>
-                                    <?php endif; ?>
+                                    <div class="home-filter__page-control">
+                                        <?php if ($page > 1): ?>
+                                            <a href="user.php?page=<?php echo ($page - 1); ?>"
+                                                class="home-filter__page-btn">
+                                                <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if ($page < $totalPages): ?>
+                                            <a href="user.php?page=<?php echo ($page + 1); ?>"
+                                                class="home-filter__page-btn">
+                                                <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
+
 
                         <div class="home-product">
                             <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>

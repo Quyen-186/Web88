@@ -178,10 +178,10 @@
 }
 
 .home-filter__label{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: white;
-    margin-left: 16px;
-    margin-right: 12px;
+    margin-left: ;
+    margin-right: 10px;
 }
 
 .home-filter__btn{
@@ -189,6 +189,16 @@
     margin-right: 12px;
     --white-color: #000
 }
+
+.home-filter__btn1{
+    width: 140px;
+    margin-right: 12px;
+    --white-color: #000
+    min-width: 124px;
+    height: 35px;
+
+}
+
 
 .home-filter__button{
     color: black;
