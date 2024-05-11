@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
   $address = $_POST['address'];
   $phone = $_POST['phone'];
   $email = $_POST['email'];
-  
+  $dob = $_POST['dob'];
+
   // Check for duplicate username
   $check_duplicate = "SELECT * FROM taikhoan WHERE username = '$username'";
   $result_duplicate = mysqli_query($mysqli, $check_duplicate);
@@ -81,6 +82,11 @@ if (isset($_POST['submit'])) {
       <div>
         <label for="address"><b>Địa chỉ</b></label>
         <input type="text" placeholder="Địa chỉ" name="address" required>
+      </div>
+
+      <div>
+        <label for="dob"><b>Ngày sinh</b></label>
+        <input type="date" placeholder="Ngày sinh" name="dob" required>
       </div>
 
       <div class="clearfix">

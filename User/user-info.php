@@ -1,3 +1,33 @@
+<?php
+session_start();
+// Validate session on each page
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page or other appropriate action
+    header("Location: Sign-in.php");
+    exit();
+}
+
+include_once ('layout/head.php');
+include_once ('../connection.php');
+
+$username = $_SESSION['username'];
+
+$stmt = $mysqli->prepare("SELECT username, name, address, phone, email, dob FROM taikhoan WHERE username = ?");
+
+// Bind parameters
+$stmt->bind_param("s", $username);
+
+// Execute the statement
+$stmt->execute();
+
+// Bind result variables
+$stmt->bind_result($username, $name, $address, $phone, $email, $dob);
+
+// Fetch the result
+$stmt->fetch();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +43,7 @@
             <div class="grid">
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        
+
                     </ul>
 
                     <ul class="header__navbar-list">
@@ -27,11 +57,11 @@
                                 style="text-decoration: none;">
                                 <img src="./Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png" alt=""
                                     class="user-header__profile-img">
-                                <span class="user-header__profile-name">Adu Ăng Minh</span>
+                                <span class="user-header__profile-name"><?php echo $_SESSION['name'] ?></span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./index.php" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="Sign-out.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -59,7 +89,7 @@
 
         <div class="app__container">
             <div class="grid">
-                <div class="grid__row app__content">
+                <div class="grid__row1 app__content">
                     <div class="grid__column-21">
                         <nav class="category">
                             <h3 class="category__heading">
@@ -92,33 +122,39 @@
                                         <table class="table-info">
                                             <tr>
                                                 <td class="title-info">
-                                                    Admin Username:
+                                                    Username:
                                                 </td>
-                                                <td class="detailed-info">Adu Ăng Minh</td>
+                                                <td class="detailed-info"><?php echo $username ?></td>
+
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
                                                     Họ và Tên:
                                                 </td>
-                                                <td class="detailed-info">Nguyễn Vũ Minh</td>
+                                                <td class="detailed-info"><?php echo $name ?></td>
                                             </tr>
+                                            <tr>
+                                                <td class="title-info ">
+                                                    Địa chỉ: </td>
+                                                <td class="detailed-info"><?php echo $address ?></td>
+
                                             <tr>
                                                 <td class="title-info">
                                                     Email:
                                                 </td>
-                                                <td class="detailed-info">aduanhminh@gmail.com</td>
+                                                <td class="detailed-info"><?php echo $email ?></td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
                                                     Số điện thoại:
                                                 </td>
-                                                <td class="detailed-info">0703574404</td>
+                                                <td class="detailed-info"><?php echo $phone ?></td>
                                             </tr>
                                             <tr>
                                                 <td class="title-info">
                                                     Ngày sinh:
                                                 </td>
-                                                <td class="detailed-info">01-04-2004</td>
+                                                <td class="detailed-info"><?php echo $dob ?></td>
                                             </tr>
                                         </table>
                                     </div>
