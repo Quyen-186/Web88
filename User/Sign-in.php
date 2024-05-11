@@ -5,7 +5,32 @@ include_once ("../connection.php");
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
+  // Prepare the SQL statement
+  $stmt = $mysqli->prepare("SELECT name FROM taikhoan WHERE username = ?");
+  $stmt->bind_param("s", $username);
+
+  // Execute the statement
+  $stmt->execute();
+
+  // Store the result
+  $stmt->store_result();
+
+  // Check if a row was returned
+  if ($stmt->num_rows > 0) {
+    // Bind the result to a variable
+    $stmt->bind_result($name);
+
+    // Fetch the result
+    $stmt->fetch();
+
+    // Store the name in the session
+    $_SESSION['name'] = $name;
+  }
+
   $_SESSION['username'] = $username;
+
+
+
 
   $sql_taikhoan = "SELECT * FROM taikhoan WHERE username = '$username' and password = '$password'";
   $result_getTaikhoan = mysqli_query($mysqli, $sql_taikhoan);

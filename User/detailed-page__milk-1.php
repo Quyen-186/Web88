@@ -17,12 +17,12 @@ $productInfo = [];
 // Check if product_id is set in the URL
 if (isset($_GET['product_id'])) {
     // Get the product_id from the URL
-   
+
     $productId = $_GET['product_id'];
 
     // Check if product_id is not empty and is a valid integer
-    if (!empty($productId) && is_numeric($productId)) { 
-        
+    if (!empty($productId) && is_numeric($productId)) {
+
         // Sanitize input to prevent SQL injection
         $productId = intval($productId);
 
@@ -50,9 +50,9 @@ if (isset($_GET['product_id'])) {
                 'quantity' => $row['stock_quantity'],
                 'image' => $row['image_url'],
                 'description' => $row['description']
-                
+
             ];
-            
+
         } else {
             // Product not found, you might want to handle this case
             echo ("Product not found!"); // Redirect to an error page or handle it accordingly
@@ -102,7 +102,7 @@ if (isset($_GET['product_id'])) {
                                 style="text-decoration: none;">
                                 <img src="./Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png" alt=""
                                     class="user-header__profile-img">
-                                <span class="user-header__profile-name">Adu Ăng Minh</span>
+                                <span class="user-header__profile-name"><?php echo $_SESSION['name'] ?></span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
@@ -113,9 +113,9 @@ if (isset($_GET['product_id'])) {
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <a href="user.php" class="header__logo">
                         <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                    </div>
+                    </a>
 
                     <div class="header__search">
                         <input type="text" id="inputField" class="header__search-input"
@@ -137,11 +137,7 @@ if (isset($_GET['product_id'])) {
                 <div class="grid__row1 app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class="main-content__item" href="user.php"><b>Sản phẩm hot</b></a>
-                            <a class="main-content__item" href="userMilk.php">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <b>Sữa tăng cân</b>
-                            </a>
+                            <a class="main-content__item" href="user.php"><b>Trang chủ</b></a>
                             <a class="main-content__item" href="detailed-page__milk-1.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b><?php echo $productInfo['name'] ?></b>
@@ -158,11 +154,12 @@ if (isset($_GET['product_id'])) {
                             </div>
 
                             <div class="order__item-price">
-                                <label>Giá: </label><b><?php echo $productInfo['price'] ?></b>
+                                <label>Giá: </label><b><?php echo $productInfo['price'] . "đ" ?></b>
                             </div>
 
                             <div class="order__number-products">
-                                <div class="number-products__text">Số lượng: <?php echo $productInfo['quantity'] ?></div>
+                                <div class="number-products__text">Số lượng: <?php echo $productInfo['quantity'] ?>
+                                </div>
                                 <div class="number-products__btn">
                                     <button onclick="totalClick(-1)" class="btn__choose minus">
                                         <i class="fa-solid fa-minus"></i>
@@ -189,7 +186,7 @@ if (isset($_GET['product_id'])) {
                     <div class="app__container-info-describtion">
                         <div class="info-product">
                             <div class="info-product__title">
-                                <h2>Thông tin sản phẩm</h2> 
+                                <h2>Thông tin sản phẩm</h2>
                                 <?php echo $productInfo['description'] ?>
                             </div>
 

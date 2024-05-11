@@ -8,12 +8,15 @@ if (!isset($_SESSION['username'])) {
 }
 include_once ('layout/head.php');
 include_once ('../connection.php');
+
 include_once ('search.php');
 
 // Determine which page to display
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $productsPerPage = 5;
 $totalPages = ceil(count($products) / $productsPerPage);
+
+
 
 // Calculate the index of the first product to display on the current page
 $startIndex = ($page - 1) * $productsPerPage;
@@ -37,6 +40,7 @@ if ($ketqua) {
         $category_names[] = $row['category_name'];
     }
 
+
     // Free the result set
     mysqli_free_result($ketqua);
 } else {
@@ -44,10 +48,9 @@ if ($ketqua) {
     echo "Error executing query: " . mysqli_error($mysqli);
 }
 
-if (isset($_POST['tim'])) {
-
-}
 include_once ('advanced.php');
+
+
 
 ?>
 
@@ -79,7 +82,7 @@ include_once ('advanced.php');
                                 style="text-decoration: none;">
                                 <img src="Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png" alt=""
                                     class="user-header__profile-img">
-                                <span class="user-header__profile-name">Adu Ăng Minh</span>
+                                <span class="user-header__profile-name"><?php echo $_SESSION['name'] ?></span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
@@ -90,16 +93,17 @@ include_once ('advanced.php');
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <a href="user.php" class="header__logo">
                         <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                    </div>
+                    </a>
 
 
-                    <form action="user.php" method="GET" class="header__search">
-                        <input type="text" name="search" id="inputField" class="header__search-input"
-                            placeholder="Nhập để tìm kiếm sản phẩm">
+                    <form name="search" action="user.php" method="GET" class="header__search">
+                        <input class="header__search-input" type="text" id="inputField" name="product_name"
+                            placeholder="Nhập để tìm kiếm sản phẩm"
+                            value="<?php echo isset($_GET['name']) ? $_GET['name'] : ''; ?>">
                         <div class="header__search-btn">
-                            <button type="submit" class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            <button type="submit" class="header__search-btn-icon fa-solid fa-magnifying-glass"></button>
                         </div>
                     </form>
 
@@ -115,13 +119,15 @@ include_once ('advanced.php');
             <div class="grid">
                 <div class="grid__row app__content">
                     <div class="grid__column-10">
-                        <form action="users.php" method="get">
+                        <form action="user.php" method="get">
                             <div class="home-filter">
                                 <span class="home-filter__label"></span>
                                 <label class="home-filter__label" for="product_name">Tìm nâng cao </label>
-                                <input type="text" class="home-filter__btn1" id="product_name" placeholder="Tên sản phẩm" name="product_name"
-                                    value="<?php echo isset($_GET['name']) ? $_GET['name'] : ''; ?>">
-                                <select class="home-filter__btn btn">
+                                <input type="text" class="home-filter__btn1" id="product_name"
+                                    placeholder="Tên sản phẩm" name="product_name"
+                                    value="<?php echo isset($_GET['product_name']) ? $_GET['product_name'] : ''; ?>">
+                                <select name="category" class="home-filter__btn btn">
+                                    <option value="">Chọn phân loại</option>
                                     <?php
                                     foreach ($category_names as $category_name) {
                                         $selected = ($_GET['category'] == $category_name) ? "selected" : "";
@@ -130,16 +136,16 @@ include_once ('advanced.php');
                                     ?>
                                 </select>
 
-                                    <input class="home-filter__btn1" type="number" id="min_price" name="min_price"
-                                        value="<?php echo isset($_GET['min_price']) ? $_GET['min_price'] : ''; ?>"
-                                        min="0" placeholder="Min">
-                                    <input class="home-filter__btn1" type="number" id="max_price" name="max_price"
-                                        value="<?php echo isset($_GET['max_price']) ? $_GET['max_price'] : ''; ?>"
-                                        min="0" placeholder="Max">
+                                <input class="home-filter__btn1" type="number" id="min_price" name="min_price"
+                                    value="<?php echo isset($_GET['min_price']) ? $_GET['min_price'] : ''; ?>" min="0"
+                                    placeholder="Min">
+                                <input class="home-filter__btn1" type="number" id="max_price" name="max_price"
+                                    value="<?php echo isset($_GET['max_price']) ? $_GET['max_price'] : ''; ?>" min="0"
+                                    placeholder="Max">
 
                                 <a href="user.php?page=1">
-                                    <input type="submit" value="Search" class="home-filter__btn btn"
-                                        style="background-color: orange;":>
+                                    <input type="submit" value="Tim" class="home-filter__btn btn"
+                                        style="background-color: orange;" :>
                                 </a>
 
                                 <div class="home-filter__page">
@@ -150,14 +156,39 @@ include_once ('advanced.php');
 
                                     <div class="home-filter__page-control">
                                         <?php if ($page > 1): ?>
-                                            <a href="user.php?page=<?php echo ($page - 1); ?>"
-                                                class="home-filter__page-btn">
+                                            <a href="user.php?page=<?php echo ($page - 1);
+                                                if (!empty($product_name)) {
+                                                    echo "&product_name=" . $_GET['product_name'];
+                                                }
+                                                if (isset($_GET['category'])) {
+                                                    echo "&category=" . $_GET['category'];
+                                                }
+                                                if (isset($_GET['min_price'])) {
+                                                    echo "&min_price=" . $_GET['min_price'];
+                                                }
+                                                if (isset($_GET['max_price'])) {
+                                                    echo "&max_price=" . $_GET['max_price'];
+                                                }
+                                            ?>" class="home-filter__page-btn">
                                                 <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
                                             </a>
                                         <?php endif; ?>
+
                                         <?php if ($page < $totalPages): ?>
-                                            <a href="user.php?page=<?php echo ($page + 1); ?>"
-                                                class="home-filter__page-btn">
+                                            <a href="user.php?page=<?php echo ($page + 1);
+                                                if (!empty($product_name)) {
+                                                    echo "&product_name=" . $_GET['product_name'];
+                                                }
+                                                if (isset($_GET['category'])) {
+                                                    echo "&category=" . $_GET['category'];
+                                                }
+                                                if (isset($_GET['min_price'])) {
+                                                    echo "&min_price=" . $_GET['min_price'];
+                                                }
+                                                if (isset($_GET['max_price'])) {
+                                                    echo "&max_price=" . $_GET['max_price'];
+                                                }
+                                            ?>" class="home-filter__page-btn">
                                                 <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
                                             </a>
                                         <?php endif; ?>
@@ -169,17 +200,20 @@ include_once ('advanced.php');
 
                         <div class="home-product">
                             <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
-                                <a href="detailed-page__milk-1.php?product_id=<?php echo $products[$i]['product_id']; ?>">
-                                    <div class="home-product-item">
-                                        <img src="<?php echo $products[$i]['image_url']; ?>" alt=""
-                                            class="home-product-item__img">
-                                        <h4 class="home-product-item__name"><?php echo $products[$i]['name']; ?></h4>
-                                        <div class="home-product-item__price">
-                                            <span
-                                                class="home-product-item__price-current"><b><?php echo $products[$i]['price']; ?></b></span>
+                                <?php if (!empty($products[$i]['name'])): ?>
+                                    <a style="text-decoration: none;"
+                                        href="detailed-page__milk-1.php?product_id=<?php echo $products[$i]['product_id']; ?>">
+                                        <div class="home-product-item">
+                                            <img src="<?php echo $products[$i]['image_url']; ?>" alt=""
+                                                class="home-product-item__img">
+                                            <h4 class="home-product-item__name"><?php echo $products[$i]['name']; ?></h4>
+                                            <div class="home-product-item__price">
+                                                <span
+                                                    class="home-product-item__price-current"><b><?php echo $products[$i]['price'] . "đ"; ?></b></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                <?php endif; ?>
                             <?php endfor; ?>
                         </div>
                     </div>

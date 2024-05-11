@@ -1,12 +1,10 @@
 <?php
 include '../connection.php'; // Kết nối đến cơ sở dữ liệu
-// Validate session on each page
 if (!isset($_SESSION['username'])) {
     // Redirect to login page or other appropriate action
     header("Location: Sign-in.php");
     exit();
 }
-
 
 // Thêm giỏ hàng mới cho người dùng hiện tại
 function addNewCart($username)
@@ -71,7 +69,7 @@ function addItemToCart($username, $product_id, $quantity)
 function getAllCartItems($username)
 {
     global $mysqli;
-    $select_items_query = "SELECT cart_items.*, products.name AS product_name, products.price, products.image AS product_img FROM cart_items INNER JOIN products ON cart_items.product_id = products.product_id INNER JOIN cart ON cart_items.cart_id = cart.cart_id WHERE cart.username = ?";
+    $select_items_query = "SELECT cart_items.*, products.name AS product_name, products.price, products.image AS product_img FROM cart_items INNER JOIN products ON cart_items.product_id = products.product_id INNER JOIN carts ON cart_items.cart_id = carts.cart_id WHERE carts.username = ?";
     $stmt = mysqli_prepare($mysqli, $select_items_query);
     mysqli_stmt_bind_param($stmt, "i", $username);
     mysqli_stmt_execute($stmt);
@@ -91,7 +89,7 @@ function getTotalCartQuantity($username)
 
     // Kiểm tra xem người dùng đã đăng nhập hay chưa
     if (isset($username)) {
-        $select_quantity_query = "SELECT SUM(quantity) AS total_quantity FROM cart_items INNER JOIN cart ON cart_items.cart_id = cart.cart_id WHERE cart.username = ?";
+        $select_quantity_query = "SELECT SUM(quantity) AS total_quantity FROM cart_items INNER JOIN carts ON cart_items.cart_id = carts.cart_id WHERE carts.username = ?";
         $stmt = mysqli_prepare($mysqli, $select_quantity_query);
         mysqli_stmt_bind_param($stmt, "i", $username);
         mysqli_stmt_execute($stmt);
@@ -120,7 +118,7 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     // Ví dụ: Thêm giỏ hàng mới nếu người dùng chưa có
-    $existing_cart_query = "SELECT * FROM cart WHERE username = ?";
+    $existing_cart_query = "SELECT * FROM carts WHERE username = ?";
     $stmt = mysqli_prepare($mysqli, $existing_cart_query);
     mysqli_stmt_bind_param($stmt, "i", $username);
     mysqli_stmt_execute($stmt);
