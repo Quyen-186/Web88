@@ -68,9 +68,9 @@ $stmt->fetch();
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <a href="user.php" class="header__logo">
                         <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                    </div>
+                    </a>
 
                     <div class="header__search">
                         <input type="text" id="inputField" class="header__search-input"
