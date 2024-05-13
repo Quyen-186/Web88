@@ -170,17 +170,17 @@ if (isset($_GET['product_id'])) {
                                     </button>
                                 </div>
                             </div>
-                            <div class="order__order-buy">
-                                <a href="cart.php">
-                                    <button class="btn__choose order-buy__btn-addToCast">
+                            <form method="POST" action="cart.php">
+                                <div class="order__order-buy">
+                                    <input type="hidden" name="product_id" value="<?php echo $productId ?>">
+                                    <button name="addtocart" class="btn__choose order-buy__btn-addToCast">
                                         <i class="fa-solid fa-cart-shopping cart-shopping__css"></i>
                                         Thêm vào giỏ hàng
                                     </button>
-                                </a>
-                                <a href="./paymentForm.php">
-                                    <button class="btn__choose order-buy__btn-buy">Mua hàng</button>
-                                </a>
-                            </div>
+                                    <button name="purchase" class="btn__choose order-buy__btn-buy">Mua hàng</button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                     <div class="app__container-info-describtion">
@@ -196,7 +196,6 @@ if (isset($_GET['product_id'])) {
                 </div>
             </div>
         </div>
-
         <?php include_once ('layout/footer.php'); ?>
     </div>
 </body>

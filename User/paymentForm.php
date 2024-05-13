@@ -1,3 +1,26 @@
+<?php
+session_start();
+// Validate session on each page
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page or other appropriate action
+    header("Location: Sign-in.php");
+    exit();
+}
+
+include_once ('layout/head.php');
+include_once ('../connection.php');
+
+if (isset($_POST['product_id'])) {
+    // Get the product id from the form
+    $product_id = $_POST['product_id'];
+
+
+
+
+    
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

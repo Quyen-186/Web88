@@ -1,5 +1,6 @@
 <?php
 session_start();
+$username = $_SESSION['username'];
 // Validate session on each page
 if (!isset($_SESSION['username'])) {
     // Redirect to login page or other appropriate action
@@ -7,22 +8,89 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-    include_once ('layout/head.php');
-    include_once ('../connection.php');
-?> 
+include_once ('layout/head.php');
+include_once ('../connection.php');
+
+if (isset($_POST['product_id'])) {
+    // Get the product id from the form
+    $product_id = $_POST['product_id'];
+
+
+    // Check if the product is already in the cart
+
+    $sql = "SELECT * FROM cart WHERE username = ? AND product_id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("si", $username, $product_id);
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+
+
+    if ($result->num_rows > 0) {
+        // If the product is already in the cart, update the quantity
+        $sql = "UPDATE cart SET quantity = quantity + 1 WHERE username = ? AND product_id = ?";
+
+    } else {
+        // If the product is not in the cart, add it
+        $sql = "INSERT INTO cart (username, product_id, quantity) VALUES (?, ?, 1)";
+
+    }
+
+
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("si", $username, $product_id);
+    $stmt->execute();
+
+    // Check which button was clicked
+    if (isset($_POST['addtocart'])) {
+        // Handle add to cart action
+        // You've already added the product to the cart, so you might want to redirect the user back to the product page
+        header("Location: detailed-page__milk-1.php?product_id=$product_id");
+        exit();
+    } elseif (isset($_POST['purchase'])) {
+        // Handle purchase action
+        // Redirect the user to the checkout page
+        header("Location: paymentForm.php?product_id=$product_id");
+        exit();
+    }
+}
+if (isset($_POST['increase'])) {
+    $product_id = $_POST['increase'];
+    $sql = "UPDATE cart SET quantity = quantity + 1 WHERE username = ? AND product_id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("si", $username, $product_id);
+    $stmt->execute();
+} elseif (isset($_POST['remove'])) {
+    $product_id = $_POST['remove'];
+    $sql = "DELETE FROM cart WHERE username = ? AND product_id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("si", $username, $product_id);
+    $stmt->execute();
+
+} elseif (isset($_POST['decrease'])) {
+    $product_id = $_POST['decrease'];
+    $sql = "UPDATE cart SET quantity = GREATEST(quantity - 1, 1) WHERE username = ? AND product_id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param("si", $username, $product_id);
+    $stmt->execute();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- 
     <link rel="stylesheet" href="main_detailed_page.php">
     <link rel="stylesheet" href="admin.php">
     <link rel="stylesheet" href="usercss.php">
     <link rel="stylesheet" href="ordercss.php">
     <link rel="stylesheet" href="cartcss.php">
 </head>
+
 <body>
     <div class="app">
-    <header class="header">
+        <header class="header">
             <div class="grid">
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
@@ -48,11 +116,11 @@ if (!isset($_SESSION['username'])) {
                                 style="text-decoration: none;">
                                 <img src="Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png" alt=""
                                     class="user-header__profile-img">
-                                <span class="user-header__profile-name">Adu Ăng Minh</span>
+                                <span class="user-header__profile-name"><?php echo $_SESSION['name'] ?></span>
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="index.php" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="Sign-out.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -77,18 +145,18 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </header>
-        
+
         <div class="app__container">
             <div class="grid">
                 <div class="grid__row1 app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
-                            <a class = "main-content__item" href="user.php"><b>Sản phẩm hot</b></a>
-                            <a class = "main-content__item" href="user-info.php">
+                            <a class="main-content__item" href="user.php"><b>Sản phẩm hot</b></a>
+                            <a class="main-content__item" href="user-info.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Thông tin người dùng</b>
                             </a>
-                            <a class = "main-content__item" href="cart.php">
+                            <a class="main-content__item" href="cart.php">
                                 <i class="fa-solid fa-arrow-right"></i>
                                 <b>Giỏ hàng</b>
                             </a>
@@ -114,64 +182,87 @@ if (!isset($_SESSION['username'])) {
                                         <b>Thành tiền</b>
                                     </div>
                                     <div class="cart__product-remove">
-                                          
+
                                     </div>
                                 </div>
                                 <div class="cart__list-product">
-                                    <div class="cart__product-info">
-                                        <a class="cart__product-img">
-                                            <img src="Ảnh sản phẩm hot nhất/upl_mass_fusion_12lbs_5_4kg_1685693088_image_1685693088.jpg" alt="" class="cart__img-css">
-                                        </a>
-                                        <span class="cart__product-text">Up your mass xxxl 1350 220pl</span>
-                                    </div>
-                                    <div class="cart__product-price">
-                                        1.600.000 đ
-                                    </div>
-                                    <div class="cart__product-numbers">
-                                        <div class="number-products__btn">
-                                            <button onclick="totalClick(-1)" class="btn__choose minus">
-                                                <i class="fa-solid fa-minus"></i>
-                                            </button>
-                                            <button id="totalClicks" class="btn__choose num">1</button>
-                                            <button onclick="totalClick(1)" class="btn__choose plus">
-                                                <i class="fa-solid fa-plus"></i>
-                                            </button>
+                                    <?php
+                                    // When displaying the cart
+                                    $sql = "SELECT * FROM cart INNER JOIN sanpham ON cart.product_id = sanpham.product_id WHERE username = ?";
+                                    $stmt = $mysqli->prepare($sql);
+                                    $stmt->bind_param("s", $username);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        // Display the product details
+                                        ?>
+                                        <form method="post" action="cart.php">
+                                            <div class="cart__product-info">
+                                                <a class="cart__product-img">
+                                                    <img src="<?php echo $row['image_url']; ?>" alt=""
+                                                        class="cart__img-css">
+                                                </a>
+                                                <span class="cart__product-text"><?php echo $row['name']; ?></span>
+                                            </div>
+                                            <div class="cart__product-price">
+                                                <?php echo number_format($row['price'], 0, ',', '.'); ?> đ
+                                            </div>
+                                            <div class="cart__product-numbers">
+                                                <div class="number-products__btn">
+                                                    <button name="decrease" value="<?php echo $row['product_id']; ?>"
+                                                        class="btn__choose minus">
+                                                        <i class="fa-solid fa-minus"></i>
+                                                    </button>
+                                                    <span id="totalClicks_<?php echo $row['product_id']; ?>"
+                                                        class="btn__choose num"><?php echo $row['quantity']; ?></span>
+                                                    <button name="increase" value="<?php echo $row['product_id']; ?>"
+                                                        class="btn__choose plus">
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="cart__product-subtotal">
+                                                <?php echo number_format($row['price'] * $row['quantity'], 0, ',', '.'); ?>
+                                                đ
+                                            </div>
+                                            <div class="cart__product-remove">
+                                                <button name="remove" value="<?php echo $row['product_id']; ?>"
+                                                    class="btn__choose remove">
+                                                    <i class="fa-solid fa-trash cart__remove-icon"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
+                                    <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
+                                        <div class="cart__totals">
+                                            <div class="cart__totals-title">
+                                                <h2>Cộng giỏ hàng</h2>
+                                            </div>
+                                            <div class="cart__totals-details">
+                                                <div class="totals-details">
+                                                    <div class="text__price-currency">Tạm tính</div>
+                                                    <div class="subtotal__price-currency">
+                                                        <b>3.200.000 đ</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cart__btn-payment">
+                                                <a href="paymentForm.php">
+                                                    <button class="button">
+                                                        Tiến hành thanh toán
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="cart__product-subtotal">
-                                        1.600.000 đ
-                                    </div>
-                                    <div class="cart__product-remove">
-                                        <i class="fa-solid fa-trash cart__remove-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-    
-                        </div>
-                        <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
-                            <div class="cart__totals">
-                                <div class="cart__totals-title">
-                                    <h2>Cộng giỏ hàng</h2>
-                                </div>
-                                <div class="cart__totals-details">
-                                    <div class="totals-details">
-                                        <div class= "text__price-currency">Tạm tính</div>
-                                        <div class="subtotal__price-currency">
-                                            <b>3.200.000 đ</b>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart__btn-payment">
-                                    <a href="paymentForm.php">
-                                        <button class="button">
-                                            Tiến hành thanh toán
-                                        </button>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
@@ -179,4 +270,5 @@ if (!isset($_SESSION['username'])) {
     </div>
     <!-- <script src="main.js"></script> -->
 </body>
+
 </html>
