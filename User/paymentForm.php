@@ -28,7 +28,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 // Fetch the user's existing addresses
-$sql1 = "SELECT address FROM taikhoan WHERE username = ?";
+$sql1 = "SELECT * FROM taikhoan WHERE username = ?";
 $stmt1 = $mysqli->prepare($sql1);
 $stmt1->bind_param("s", $_SESSION['username']);
 $stmt1->execute();
@@ -45,7 +45,7 @@ while ($row = $result1->fetch_assoc()) {
 <head>
     <?php include_once ('layout/head.php'); ?>
     <link rel="stylesheet" href="./main_detailed_page.php">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin.php">
     <link rel="stylesheet" href="usercss.php">
     <link rel="stylesheet" href="ordercss.php">
     <link rel="stylesheet" href="cartcss.php">
@@ -85,7 +85,7 @@ while ($row = $result1->fetch_assoc()) {
                             </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="./index.php" class="header__navbar-item-link">Đăng xuất</a>
+                            <a href="Sign-out.php" class="header__navbar-item-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -141,30 +141,49 @@ while ($row = $result1->fetch_assoc()) {
                                 <div class="col-50">
                                     <form action="process_payment.php" method="post">
                                         <label for="fname" style="font-size: 1.5rem;"><i
-                                                class="icon-payment fa fa-user"></i> <b>Họ tên</b></label>
-                                        <input type="text" id="fname" name="firstname" style="font-size: 1.5rem;"
-                                            placeholder="John M. Doe">
-                                        <label for="adr" style="font-size: 1.5rem;"><i
-                                                class="icon-payment fa fa-address-card-o"></i> Địa chỉ</label>
+                                                class="icon-payment fa fa-user"></i>
+                                            <h2><b>Họ tên:</b></h2>
+                                        </label>
+                                        <h1><?php echo $_SESSION['name']; ?></h1><br><br>
                                         <?php foreach ($addresses as $address): ?>
+                                            <label for="phone" style="font-size: 1.5rem;"><i></i>
+                                                <h2><b>Phone:</b></h2>
+                                            </label>
+                                            <label>
+                                                <h1><?php echo $address['phone']; ?></h1>
+                                            </label>
+                                            <label for="adr" style="font-size: 1.5rem;"><i
+                                                    class="icon-payment fa fa-address-card-o"></i>
+                                                <h2><b> Địa chỉ:</b></h2>
+                                            </label>
+
                                             <input type="radio" id="adr" name="address"
-                                                value="<?php echo $address['address']; ?>" style="font-size: 1.5rem;">
-                                            <label for="adr"><?php echo $address['address']; ?></label><br>
+                                                value="<?php echo $address['address']; ?>" style="font-size: 15px;">
+                                            <label for="adr"><b>
+                                                    <h2><?php echo $address['address']; ?>
+                                                </b></h2></label>
                                         <?php endforeach; ?>
                                         <input type="radio" id="new_adr" name="address" value="new"
-                                            style="font-size: 1.5rem;">
-                                        <label for="new_adr">Địa chỉ mới</label><br>
-                                        <input type="text" id="new_address" name="new_address"
-                                            style="font-size: 1.5rem;">
+                                            style="font-size: 15px;">   
                                         <label for="new_adr" style="font-size: 1.5rem;"><i
-                                                class="icon-payment fa fa-address-card-o"></i> Địa chỉ mới</label>
-                                        <input type="text" id="new_adr" name="new_address" style="font-size: 1.5rem;">
+                                                class="icon-payment fa fa-address-card-o"></i>
+                                            <h4> Địa chỉ mới</h4>
+                                            <input type="text" id="new_address" name="new_address"
+                                                style="font-size: 1.5rem;">
+                                            <br><br><br>
 
-                                        <!-- Phuong thuc thanh toan -->
-                                        <label for="email" style="font-size: 1.5rem;"><i
-                                                class="icon-payment fa fa-envelope"></i> Email</label>
-                                        <input type="text" id="email" name="email" style="font-size: 1.5rem;"
-                                            placeholder="john@example.com">
+                                            <label for="payment_method" style="font-size: 1.5rem;"><i
+                                                    class="icon-payment fa fa-credit-card"></i> Phương thức thanh
+                                                toán
+                                            </label>
+                                            <select id="payment_method" name="payment_method"
+                                                style="font-size: 1.5rem;">
+                                                <option value="credit_card">Thẻ tín dụng</option>
+                                                <option value="debit_card">Thẻ ghi nợ</option>
+                                                <option value="paypal">PayPal</option>
+                                                <option value="cash">Tiền mặt</option>
+                                            </select>
+
 
                                 </div>
                             </div>
@@ -229,21 +248,16 @@ while ($row = $result1->fetch_assoc()) {
                                 <table>
                                     <tr>
                                         <td class="title-info">
-                                            <p>Tổng thành tiền: :
+                                            <p><b>Tổng thành tiền: </b>
                                                 <?php echo number_format(($total_price), 0, ',', '.'); ?> đ
                                             </p>
                                         </td>
-
                                     </tr>
-
                                 </table>
                             </div>
                         </div>
-
                         <button type="submit" onclick="paymentButton()" value="Submit" class="btn">Đặt hàng</button>
-
                         </form>
-
                     </div>
                 </div>
             </div>
