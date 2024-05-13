@@ -134,7 +134,7 @@ if (isset($_GET['product_id'])) {
 
         <div class="app__container-order">
             <div class="grid">
-                <div class="grid__row1 app__content">
+                <div class="grid__row app__content">
                     <div class="progress-bar">
                         <div class="progress-bar__main-content">
                             <a class="main-content__item" href="user.php"><b>Trang chủ</b></a>

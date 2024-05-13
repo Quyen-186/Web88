@@ -76,10 +76,6 @@ html{
 
 .grid__row1{
     display: flex;
-    flex-wrap: wrap;
-    margin-left: -5px;
-    margin-right: -5px;
-    height:auto;
 }
 .admin-grid__row {
     display: flex;
