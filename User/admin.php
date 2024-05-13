@@ -81,6 +81,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
+  
 }
 
 .profile-img__miniface {
@@ -107,15 +108,19 @@
 
 .admin-grid__column-7 {
   border-right: 1px solid rgba(0, 0, 0, 0.05);
+  margin-left: 50px;
 }
 
 .admin__profile-info {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-.table-info {}
+.table-info {
+  margin-left: 150px;
+}
 
 .title-info {
   text-align: right;

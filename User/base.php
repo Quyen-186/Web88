@@ -159,6 +159,10 @@ html{
     width: 40.9999%;
 }
 
+.admin-grid__column-3-1{
+    margin-left: 150px;
+}
+
 .cart-grid__column-8 {
     padding-left: 5px;
     padding-right: 5px;

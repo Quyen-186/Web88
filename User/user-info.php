@@ -158,7 +158,7 @@ $stmt->fetch();
                                             </tr>
                                         </table>
                                     </div>
-                                    <div class="admin-grid__column-3">
+                                    <div class="admin-grid__column-3-1">
                                         <div class="admin__profile-img">
                                             <img src="./Ảnh web admin/237774783_1607417492938803_7455495955635193349_n.png"
                                                 alt="" class="profile-img__miniface">

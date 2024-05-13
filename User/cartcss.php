@@ -34,6 +34,7 @@
     width: 380px;
 }
 
+
 .cart__product-price {
     font-size: 1.5rem;
     color: var(--text-color);
@@ -49,7 +50,7 @@
 .cart__product-subtotal {
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 95.48px;
+    width: 100px;
 }
 
 .cart__product-remove {
