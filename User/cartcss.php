@@ -31,26 +31,26 @@
     align-items: center;
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 380px;
+    width: 315px;
 }
 
 
 .cart__product-price {
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 95.48px;
+    width: 130px;
 }
 
 .cart__product-numbers {
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 143.22px;
+    width: 120px;
 }
 
 .cart__product-subtotal {
     font-size: 1.5rem;
     color: var(--text-color);
-    width: 100px;
+    width: 130px;
 }
 
 .cart__product-remove {
@@ -63,9 +63,7 @@
     flex-wrap: wrap;
     align-items: center;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .cart__img-css {
     width: 50px;
     height: 50px;
@@ -73,6 +71,7 @@
 
 .cart__product-text {
     margin-left: 30px;
+    
 }
 
 .cart__remove-icon {

@@ -185,28 +185,26 @@ if (isset($_POST['increase'])) {
 
                                     </div>
                                 </div>
-                                <section>
-                                    <div class="cart__list-product">
-                                        <?php
-                                        // When displaying the cart
-                                        $sql = "SELECT * FROM cart INNER JOIN sanpham ON cart.product_id = sanpham.product_id WHERE username = ?";
-                                        $stmt = $mysqli->prepare($sql);
-                                        $stmt->bind_param("s", $username);
-                                        $stmt->execute();
-                                        $result = $stmt->get_result();
+                                <div class="cart__list-product">
+                                    <?php
+                                    // When displaying the cart
+                                    $sql = "SELECT * FROM cart INNER JOIN sanpham ON cart.product_id = sanpham.product_id WHERE username = ?";
+                                    $stmt = $mysqli->prepare($sql);
+                                    $stmt->bind_param("s", $username);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
 
-                                        while ($row = $result->fetch_assoc()) {
-                                            $total_price += $row['price'] * $row['quantity'];
-                                            // Display the product details
-                                            ?>
+                                    while ($row = $result->fetch_assoc()) {
+                                        $total_price += $row['price'] * $row['quantity'];
+                                        // Display the product details
+                                        ?>
+                                        <form class="cart__list-product" method="post" action="cart.php">
                                             <div class="cart__product-info">
-                                                <form class="" method="post" action="cart.php">
-
-                                                    <a class="cart__product-img">
-                                                        <img src="<?php echo $row['image_url']; ?>" alt=""
-                                                            class="cart__img-css">
-                                                    </a>
-                                                    <span class="cart__product-text"><?php echo $row['name']; ?></span>
+                                                <a class="cart__product-img">
+                                                    <img src="<?php echo $row['image_url']; ?>" alt=""
+                                                        class="cart__img-css">
+                                                </a>
+                                                <span class="cart__product-text"><?php echo $row['name']; ?></span>
                                             </div>
                                             <div class="cart__product-price">
                                                 <?php echo number_format($row['price'], 0, ',', '.'); ?> đ
@@ -234,47 +232,50 @@ if (isset($_POST['increase'])) {
                                                     class="btn__choose remove">
                                                     <i class="fa-solid fa-trash cart__remove-icon"></i>
                                                 </button>
-
-                                                </form>
                                             </div>
-                                            <?php
-                                        }
-                                        ?>
-                                        <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
-                                            <div class="cart__totals">
-                                                <div class="cart__totals-title">
-                                                    <h2>Cộng giỏ hàng</h2>
-                                                </div>
-                                                <div class="cart__totals-details">
-                                                    <div class="totals-details">
-                                                        <div class="text__price-currency">Tạm tính</div>
-                                                        <div class="subtotal__price-currency">
-                                                            <b><?php echo number_format(($total_price), 0, ',', '.'); ?>
-                                                                đ</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cart__btn-payment">
-                                                    <a href="paymentForm.php">
-                                                        <button class="button">
-                                                            Tiến hành thanh toán
-                                                        </button>
-                                                    </a>
-                                                </div>
+                                        </form>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
+                                <div class="cart__totals">
+                                    <div class="cart__totals-title">
+                                        <h2>Cộng giỏ hàng</h2>
+                                    </div>
+                                    <div class="cart__totals-details">
+                                        <div class="totals-details">
+                                            <div class="text__price-currency">Tạm tính</div>
+                                            <div class="subtotal__price-currency">
+                                                <b><?php echo number_format(($total_price), 0, ',', '.'); ?>
+                                                    đ</b>
                                             </div>
                                         </div>
                                     </div>
-                                </section>
+                                    <div class="cart__btn-payment">
+                                        <a href="paymentForm.php">
+                                            <button class="button">
+                                                Tiến hành thanh toán
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
                 </div>
+                
             </div>
+            
         </div>
+        
 
         <?php include_once ('layout/footer.php'); ?>
     </div>
-    <!-- <script src="main.js"></script> -->
 </body>
 
 </html>

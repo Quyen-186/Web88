@@ -139,7 +139,7 @@ while ($row = $result1->fetch_assoc()) {
 
                             <div class="row">
                                 <div class="col-50">
-                                    <form action="process_payment.php" method="post">
+                                    <form action="order.php" method="post">
                                         <label for="fname" style="font-size: 1.5rem;"><i
                                                 class="icon-payment fa fa-user"></i>
                                             <h2><b>Họ tên:</b></h2>
@@ -152,39 +152,36 @@ while ($row = $result1->fetch_assoc()) {
                                             <label>
                                                 <h1><?php echo $address['phone']; ?></h1>
                                             </label>
-                                            <label for="adr" style="font-size: 1.5rem;"><i
-                                                    class="icon-payment fa fa-address-card-o"></i>
+                                            <!-- Add a hidden input for the phone number -->
+                                            <input type="hidden" name="phone" value="<?php echo $address['phone']; ?>">
+                                            <label for="adr_<?php echo $address['id']; ?>" style="font-size: 1.5rem;">
+                                                <i class="icon-payment fa fa-address-card-o"></i>
                                                 <h2><b> Địa chỉ:</b></h2>
                                             </label>
-
-                                            <input type="radio" id="adr" name="address"
+                                            <input type="radio" id="adr_<?php echo $address['id']; ?>" name="address"
                                                 value="<?php echo $address['address']; ?>" style="font-size: 15px;">
-                                            <label for="adr"><b>
-                                                    <h2><?php echo $address['address']; ?>
-                                                </b></h2></label>
+                                            <label for="adr_<?php echo $address['id']; ?>"><b>
+                                                    <h2><?php echo $address['address']; ?></h2>
+                                                </b></label>
                                         <?php endforeach; ?>
                                         <input type="radio" id="new_adr" name="address" value="new"
-                                            style="font-size: 15px;">   
-                                        <label for="new_adr" style="font-size: 1.5rem;"><i
-                                                class="icon-payment fa fa-address-card-o"></i>
+                                            style="font-size: 15px;">
+                                        <label for="new_adr" style="font-size: 1.5rem;">
+                                            <i class="icon-payment fa fa-address-card-o"></i>
                                             <h4> Địa chỉ mới</h4>
                                             <input type="text" id="new_address" name="new_address"
                                                 style="font-size: 1.5rem;">
-                                            <br><br><br>
-
-                                            <label for="payment_method" style="font-size: 1.5rem;"><i
-                                                    class="icon-payment fa fa-credit-card"></i> Phương thức thanh
-                                                toán
-                                            </label>
-                                            <select id="payment_method" name="payment_method"
-                                                style="font-size: 1.5rem;">
-                                                <option value="credit_card">Thẻ tín dụng</option>
-                                                <option value="debit_card">Thẻ ghi nợ</option>
-                                                <option value="paypal">PayPal</option>
-                                                <option value="cash">Tiền mặt</option>
-                                            </select>
-
-
+                                        </label>
+                                        <br><br><br>
+                                        <label for="payment_method" style="font-size: 1.5rem;">
+                                            <i class="icon-payment fa fa-credit-card"></i> Phương thức thanh toán
+                                        </label>
+                                        <select id="payment_method" name="payment_method" style="font-size: 1.5rem;">
+                                            <option value="credit_card">Thẻ tín dụng</option>
+                                            <option value="debit_card">Thẻ ghi nợ</option>
+                                            <option value="paypal">PayPal</option>
+                                            <option value="cash">Tiền mặt</option>
+                                        </select>
                                 </div>
                             </div>
 
@@ -203,7 +200,6 @@ while ($row = $result1->fetch_assoc()) {
                                         <b>Thành tiền</b>
                                     </div>
                                     <div class="cart__product-remove">
-
                                     </div>
                                 </div>
                                 <?php
@@ -226,7 +222,7 @@ while ($row = $result1->fetch_assoc()) {
                                             <span class="cart__product-text"><?php echo $row['name']; ?></span>
                                         </div>
                                         <div class="cart__product-price">
-                                            <?php echo number_format($row['price'], 0, ',', '.'); ?>
+                                            <?php echo number_format($row['price'], 0, ',', '.'); ?> đ
                                         </div>
                                         <div class="cart__product-numbers">
                                             <span <?php echo $row['product_id']; ?>><?php echo $row['quantity']; ?>
@@ -238,12 +234,12 @@ while ($row = $result1->fetch_assoc()) {
                                             <?php echo number_format($row['price'] * $row['quantity'], 0, ',', '.'); ?>
                                             đ
                                         </div>
+
                                     </div>
                                     <?php
                                 }
                                 ?>
                             </div>
-
                             <div class="payment-subtotal">
                                 <table>
                                     <tr>
@@ -254,6 +250,7 @@ while ($row = $result1->fetch_assoc()) {
                                         </td>
                                     </tr>
                                 </table>
+                                <input type="hidden" name="total_price" value="<?php echo $total_price; ?>">
                             </div>
                         </div>
                         <button type="submit" onclick="paymentButton()" value="Submit" class="btn">Đặt hàng</button>
