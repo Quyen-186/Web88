@@ -96,13 +96,14 @@ while ($row = $result1->fetch_assoc()) {
                         <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
                     </a>
 
-                    <div class="header__search">
-                        <input type="text" id="inputField" class="header__search-input"
-                            placeholder="Nhập để tìm kiếm sản phẩm">
+                    <form name="search" action="user.php" method="GET" class="header__search">
+                        <input class="header__search-input" type="text" id="inputField" name="product_name"
+                            placeholder="Nhập để tìm kiếm sản phẩm"
+                            value="<?php echo isset($_GET['name']) ? $_GET['name'] : ''; ?>">
                         <div class="header__search-btn">
-                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            <button type="submit" class="header__search-btn-icon fa-solid fa-magnifying-glass"></button>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="header__cart">
                         <a href="cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
@@ -163,9 +164,9 @@ while ($row = $result1->fetch_assoc()) {
                                             <label for="adr_<?php echo $address['id']; ?>"><b>
                                                     <h2><?php echo $address['address']; ?></h2>
                                                 </b></label>
-                                                <input type="hidden" name="username" value="<?php echo $username ?>">
+                                            <input type="hidden" name="username" value="<?php echo $username ?>">
                                         <?php endforeach; ?>
-                                        <label for="new_adr" style="font-size: 1.5rem;">    
+                                        <label for="new_adr" style="font-size: 1.5rem;">
                                             <i class="icon-payment fa fa-address-card-o"></i>
                                             <h4> Địa chỉ mới</h4>
                                             <input type="text" id="new_address" name="new_address"
