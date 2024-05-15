@@ -32,6 +32,7 @@
     font-size: 1.5rem;
     color: var(--text-color);
     width: 380px;
+    padding: 15px ;
 }
 
 .cart__product-price {

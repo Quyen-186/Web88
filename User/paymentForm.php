@@ -92,9 +92,9 @@ while ($row = $result1->fetch_assoc()) {
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
-                        <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                    </div>
+                    <a href="user.php" class="header__logo">
+                        <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
+                    </a>
 
                     <div class="header__search">
                         <input type="text" id="inputField" class="header__search-input"
@@ -105,7 +105,7 @@ while ($row = $result1->fetch_assoc()) {
                     </div>
 
                     <div class="header__cart">
-                        <a href="./cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
+                        <a href="cart.php"><i class="header__cart-icon fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
             </div>
@@ -158,15 +158,14 @@ while ($row = $result1->fetch_assoc()) {
                                                 <i class="icon-payment fa fa-address-card-o"></i>
                                                 <h2><b> Địa chỉ:</b></h2>
                                             </label>
-                                            <input type="radio" id="adr_<?php echo $address['id']; ?>" name="address"
+                                            <input type="checkbox" id="adr_<?php echo $address['id']; ?>" name="address"
                                                 value="<?php echo $address['address']; ?>" style="font-size: 15px;">
                                             <label for="adr_<?php echo $address['id']; ?>"><b>
                                                     <h2><?php echo $address['address']; ?></h2>
                                                 </b></label>
+                                                <input type="hidden" name="username" value="<?php echo $username ?>">
                                         <?php endforeach; ?>
-                                        <input type="radio" id="new_adr" name="address" value="new"
-                                            style="font-size: 15px;">
-                                        <label for="new_adr" style="font-size: 1.5rem;">
+                                        <label for="new_adr" style="font-size: 1.5rem;">    
                                             <i class="icon-payment fa fa-address-card-o"></i>
                                             <h4> Địa chỉ mới</h4>
                                             <input type="text" id="new_address" name="new_address"

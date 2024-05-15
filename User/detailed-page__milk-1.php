@@ -154,7 +154,7 @@ if (isset($_GET['product_id'])) {
                             </div>
 
                             <div class="order__item-price">
-                                <label>Giá: </label><b><?php echo $productInfo['price'] . "đ" ?></b>
+                                <label>Giá: </label><b><?php echo number_format($productInfo['price'], 0, ',', '.') . "đ"?></b>
                             </div>
 
                             <div class="order__number-products">

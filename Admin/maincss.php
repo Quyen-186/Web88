@@ -168,7 +168,7 @@
 
 /* Home sort +filter */
 .home-filter{
-    background-color: #0d90df;
+    background-color: #00b4e8;
     display: flex;
     align-items: center;
     padding: 8px 22px;
@@ -176,15 +176,24 @@
 }
 
 .home-filter__label{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: white;
-    margin-left: 16px;
+    margin-right: 10px;
+}
+
+
+.home-filter__btn{
+    margin-right: 12px;
+  --white-color: #000;
+min-width: 90px;
     margin-right: 12px;
 }
 
-.home-filter__btn{
-    min-width: 90px;
-    margin-right: 12px;
+.home-filter__btn1{
+    width: 140px;
+  margin-right: 12px;
+  --white-color: #000 min-width: 124px;
+  height: 35px;
 }
 
 .home-filter__btn:hover{
@@ -246,7 +255,7 @@
     margin-bottom: 10px;
 }
 .home-product-item{
-    display: block;
+    display: inline-block;
     position: relative;
     margin-top: 10px;
     text-decoration: none;
@@ -256,6 +265,7 @@
     box-shadow: 0 0.1px 2px 0 rgba(0, 0, 0, 0.1);
     transition: transform linear 0.1s;
     will-change: transform;
+    padding: 10px;
 }
 
 .home-product-item:hover{
@@ -263,7 +273,8 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .home-product-item__img{
-    width: 100%;
+    width: 177x;
+    height: 177px;  
 }
 
 .home-product-item__name{

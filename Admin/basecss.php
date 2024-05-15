@@ -21,20 +21,19 @@ html{
 /* button style */
 .btn{
     min-width: 124px;
-    height: 34px;
-    text-decoration: none;
-    border: none;
-    border-radius: 2px;
-    font-size: 1.5rem;
-    padding: 0 12px;
-    outline: none;
-    cursor: pointer;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.6rem;
-    background-color: #0d90df;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  color: var(--white-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6rem;
 }
 /* Responsive */
 .grid{
@@ -152,7 +151,10 @@ html{
     align-items: center;
     justify-content: center;
     line-height: 1.6rem;
+    transition: color 0.3s ease;
 }
+
+
 
 /* Selection */
 .select-input {

@@ -120,6 +120,12 @@ html{
     background-color: white;
 }
 
+.grid__column-12{
+    width: 100%;
+    background-color: white;
+    display: content;
+}
+
 .grid__row-2-4 {
     display: flex;
     flex-wrap: wrap;

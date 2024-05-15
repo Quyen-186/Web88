@@ -34,6 +34,17 @@
     width: 315px;
 }
 
+.cart__product-info1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    width: 315px;
+    display: block;
+    padding-bottom: inherit;
+}
+
 
 .cart__product-price {
     font-size: 1.5rem;

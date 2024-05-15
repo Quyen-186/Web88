@@ -5,28 +5,21 @@ error_reporting(E_ALL);
 session_start();
 include_once ('../connection.php');
 
+$name = $_SESSION['name'];
 $username = $_SESSION['username'];
 if (!isset($_SESSION['username'])) {
     // Redirect to login page or other appropriate action
     header("Location: Sign-in.php");
     exit();
 }
-
-$payment_method = $_POST['payment_method'];
-// Check if the address exists in the form data
-if (isset($_POST['address'])) {
-    $address = $_POST['address'];
-} else
-    $address = ['new_address'];
-
-$phone = $_POST['phone'];
-$name = $_SESSION['name'];
-$total = $_POST['total_price'];
-
-
 // Generate a unique order_id for the entire order
 $order_id = uniqid();
 
+$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+$address = isset($_POST['new_address']) ? $_POST['new_address'] : (isset($_POST['address']) ? $_POST['address'] : '');
+$payment_method = isset($_POST['payment_method']) ? $_POST['payment_method'] : '';
+$total = isset($_POST['total_price']) ? $_POST['total_price'] : 0;
+$status = isset($_POST['status']) ? $_POST['status'] : 'not verified';
 
 
 // Fetch cart items from the database
@@ -39,24 +32,37 @@ if (!$stmt->execute()) {
 $result = $stmt->get_result();
 
 // Create a new record in the orders table
-$sql = "INSERT INTO orders (username, phone, address, payment, total) VALUES (?, ?, ?, ?, ?)";
-$stmt = $mysqli->prepare($sql);
-$stmt->bind_param("ssssi", $username, $phone, $address, $payment_method, $total);
-$stmt->execute();
+$sql = "INSERT INTO orders (username, phone, address, payment, total, status) VALUES (?, ?, ?, ?, ?, ?)";
+$stmt1 = $mysqli->prepare($sql);
 
+if ($stmt1 === false) {
+    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
+}
+
+
+$bind_result = $stmt1->bind_param("ssssis", $username, $phone, $address, $payment_method, $total, $status);
+
+if ($bind_result === false) {
+    die('bind_param() failed: ' . htmlspecialchars($stmt1->error));
+}
+
+$execute_result = $stmt1->execute();
+
+if ($execute_result === false) {
+    die('execute() failed: ' . htmlspecialchars($stmt1->error));
+}
 // Get the last inserted id (the order id)
 $order_id = $mysqli->insert_id;
 
 // For each item in the cart, create a new record in the order_items table
 while ($row = $result->fetch_assoc()) {
-    $sql = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)";
-    $stmt2 = $mysqli->prepare($sql);
+    $sql1 = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)";
+    $stmt2 = $mysqli->prepare($sql1);
     $stmt2->bind_param("iii", $order_id, $row['product_id'], $row['quantity']);
     if (!$stmt2->execute()) {
         die("Failed to insert order item: " . $stmt2->error);
     }
 }
-
 
 
 // Clear the user's cart
@@ -65,13 +71,6 @@ $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("s", $username);
 $stmt->execute();
 
-
-
-// Generate a receipt
-echo "<h1>Receipt</h1>";
-echo "<p>Order ID: $order_id</p>";
-echo "<p>Payment method: $payment_method</p>";
-echo "<p>Address: $address</p>";
 
 // Fetch cart items from the database again
 $sql = "SELECT * FROM cart WHERE username = ?";
@@ -84,7 +83,42 @@ while ($row = $result->fetch_assoc()) {
     echo "<p>Product ID: {$row['product_id']}, Quantity: {$row['quantity']}</p>";
 }
 
-echo "<p><a href='download_receipt.php?order_id=$order_id'>Download receipt</a></p>";
+// Prepare the SQL statement
+$stmt1 = $mysqli->prepare("SELECT DISTINCT *,  taikhoan.name AS taikhoan_name, orders.status AS order_status, sanpham.name AS sanpham_name
+FROM orders 
+JOIN order_items ON orders.id = order_items.order_id
+JOIN sanpham ON order_items.product_id = sanpham.product_id
+JOIN taikhoan ON taikhoan.username = orders.username 
+WHERE orders.username = ?
+GROUP BY order_items.order_id");
+
+if ($stmt1 === false) {
+    die("Failed to prepare statement: " . $mysqli->error);
+}
+
+// Bind the username parameter
+if (!$stmt1->bind_param("s", $_SESSION['username'])) {
+    die("Failed to bind parameters: " . $stmt1->error);
+}
+
+// Execute the statement
+if (!$stmt1->execute()) {
+    die("Failed to execute statement: " . $stmt1->error);
+}
+
+// Get the result
+$ketqua = $stmt1->get_result();
+
+// Fetch all results as an associative array
+$orders = $ketqua->fetch_all(MYSQLI_ASSOC);
+
+$orderStatusTerms = [
+    'not verified' => 'Chưa xử lý',
+    'verified' => 'Đã xác nhận',
+    'delivered' => 'Đã giao',
+    'cancelled' => 'Đã hủy',
+
+];
 
 ?>
 <!DOCTYPE html>
@@ -130,9 +164,9 @@ echo "<p><a href='download_receipt.php?order_id=$order_id'>Download receipt</a><
 
                     <!-- Header with search -->
                     <div class="header-with-search">
-                        <div class="header__logo">
+                        <a href="user.php" class="header__logo">
                             <img src="./Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                        </div>
+                        </a>
 
                         <div class="header__search">
                             <input type="text" id="inputField" class="header__search-input"
@@ -173,59 +207,33 @@ echo "<p><a href='download_receipt.php?order_id=$order_id'>Download receipt</a><
                             </nav>
                         </div>
 
-                        <div class="grid__column-10">
+                        <div class="grid__column-102">
                             <div class="order-grid__row">
                                 <div class="ordered-order">
-                                    <div class="ordered-order__transfer-info">
-                                        <span class="order__transfer-info">
-                                            Đơn hàng đã được giao thành công
-                                            <i class="fa-regular fa-circle-question"></i>
-                                        </span>
-                                        <span class="order__confirm">HOÀN THÀNH</span>
-                                    </div>
-                                    <div class="ordered-order__detailed-info">
-                                        <div class="ordered-order__img">
-                                            <img src="./Ảnh sản phẩm sữa tăng cân bán chạy/upl_mass_tech_2000_22lbs_10kg_1677569000_image_1677569000.jpg"
-                                                alt="" class="order__img-css">
+                                    <?php foreach ($orders as $order): ?>
+                                        <div class="ordered-order__transfer-info">
+                                            <span
+                                                class="order__confirm"><?php echo $orderStatusTerms[$order['order_status']] ?></span>
                                         </div>
-                                        <div class="ordered-order__info">
-                                            <div class="info-title">Mass Tech 2000 22lbs 10kg</div>
-                                            <div class="info-numbers">x2</div>
+                                        <div class="ordered-order__detailed-info">
+                                            <a href="orderdetail.php?order_id=<?php echo $order['order_id'] ?>"
+                                                class="ordered-order__img">
+                                                <img src="cart.jpeg" alt="" class="order__img-css">
+                                            </a>
+                                            <div class="ordered-order__info">
+                                                <div class="info-title"><?php echo $order['sanpham_name'] ?></div>
+
+                                            </div>
+                                            <div class="product-price">
+
+                                            </div>
                                         </div>
-                                        <div class="product-price">
-                                            1.500.000 đ
+                                        <div class="ordered-order__price">
+
                                         </div>
-                                    </div>
-                                    <div class="ordered-order__price">
-                                        Thành tiền: 1.540.000 đ
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
 
-                                <div class="ordered-order">
-                                    <div class="ordered-order__transfer-info">
-                                        <span class="order__transfer-info">
-                                            Đơn hàng đã được giao thành công
-                                            <i class="fa-regular fa-circle-question"></i>
-                                        </span>
-                                        <span class="order__confirm">HOÀN THÀNH</span>
-                                    </div>
-                                    <div class="ordered-order__detailed-info">
-                                        <div class="ordered-order__img">
-                                            <img src="./Ảnh sản phẩm sữa tăng cân bán chạy/upl_elitelab_mass_muscle_gainer_20lbs_1682398641_image_1682398641.jpg"
-                                                alt="" class="order__img-css">
-                                        </div>
-                                        <div class="ordered-order__info">
-                                            <div class="info-title">Mass Tech 2000 22lbs 10kg</div>
-                                            <div class="info-numbers">x2</div>
-                                        </div>
-                                        <div class="product-price">
-                                            1.500.000 đ
-                                        </div>
-                                    </div>
-                                    <div class="ordered-order__price">
-                                        Thành tiền: 1.540.000 đ
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

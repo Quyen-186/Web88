@@ -157,18 +157,18 @@ include_once ('advanced.php');
                                     <div class="home-filter__page-control">
                                         <?php if ($page > 1): ?>
                                             <a href="user.php?page=<?php echo ($page - 1);
-                                                if (!empty($product_name)) {
-                                                    echo "&product_name=" . $_GET['product_name'];
-                                                }
-                                                if (isset($_GET['category'])) {
-                                                    echo "&category=" . $_GET['category'];
-                                                }
-                                                if (isset($_GET['min_price'])) {
-                                                    echo "&min_price=" . $_GET['min_price'];
-                                                }
-                                                if (isset($_GET['max_price'])) {
-                                                    echo "&max_price=" . $_GET['max_price'];
-                                                }
+                                            if (!empty($product_name)) {
+                                                echo "&product_name=" . $_GET['product_name'];
+                                            }
+                                            if (isset($_GET['category'])) {
+                                                echo "&category=" . $_GET['category'];
+                                            }
+                                            if (isset($_GET['min_price'])) {
+                                                echo "&min_price=" . $_GET['min_price'];
+                                            }
+                                            if (isset($_GET['max_price'])) {
+                                                echo "&max_price=" . $_GET['max_price'];
+                                            }
                                             ?>" class="home-filter__page-btn">
                                                 <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
                                             </a>
@@ -176,18 +176,18 @@ include_once ('advanced.php');
 
                                         <?php if ($page < $totalPages): ?>
                                             <a href="user.php?page=<?php echo ($page + 1);
-                                                if (!empty($product_name)) {
-                                                    echo "&product_name=" . $_GET['product_name'];
-                                                }
-                                                if (isset($_GET['category'])) {
-                                                    echo "&category=" . $_GET['category'];
-                                                }
-                                                if (isset($_GET['min_price'])) {
-                                                    echo "&min_price=" . $_GET['min_price'];
-                                                }
-                                                if (isset($_GET['max_price'])) {
-                                                    echo "&max_price=" . $_GET['max_price'];
-                                                }
+                                            if (!empty($product_name)) {
+                                                echo "&product_name=" . $_GET['product_name'];
+                                            }
+                                            if (isset($_GET['category'])) {
+                                                echo "&category=" . $_GET['category'];
+                                            }
+                                            if (isset($_GET['min_price'])) {
+                                                echo "&min_price=" . $_GET['min_price'];
+                                            }
+                                            if (isset($_GET['max_price'])) {
+                                                echo "&max_price=" . $_GET['max_price'];
+                                            }
                                             ?>" class="home-filter__page-btn">
                                                 <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
                                             </a>
@@ -200,7 +200,7 @@ include_once ('advanced.php');
 
                         <div class="home-product">
                             <?php for ($i = $startIndex; $i <= $endIndex; $i++): ?>
-                                <?php if (!empty($products[$i]['name'])): ?>
+                                <?php if (!empty($products[$i]['name']) && $products[$i]['status'] == 1): ?>
                                     <a style="text-decoration: none;"
                                         href="detailed-page__milk-1.php?product_id=<?php echo $products[$i]['product_id']; ?>">
                                         <div class="home-product-item">
@@ -209,7 +209,7 @@ include_once ('advanced.php');
                                             <h4 class="home-product-item__name"><?php echo $products[$i]['name']; ?></h4>
                                             <div class="home-product-item__price">
                                                 <span
-                                                    class="home-product-item__price-current"><b><?php echo $products[$i]['price'] . "đ"; ?></b></span>
+                                                    class="home-product-item__price-current"><b><?php echo number_format($products[$i]['price'], 0, ',', '.') . "đ"; ?></b></span>
                                             </div>
                                         </div>
                                     </a>

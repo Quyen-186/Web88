@@ -127,9 +127,9 @@ if (isset($_POST['increase'])) {
 
                 <!-- Header with search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <a href="user.php" class="header__logo">
                         <img src="Ảnh logo/logo 1_1615870157.png" alt="" class="header__logo-img">
-                    </div>
+                    </a>
 
                     <div class="header__search">
                         <input type="text" id="inputField" class="header__search-input"
@@ -240,39 +240,39 @@ if (isset($_POST['increase'])) {
                                 </div>
 
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
                     <div class="cart-grid__column-4" style="background-color: #F5F5F5;">
-                                <div class="cart__totals">
-                                    <div class="cart__totals-title">
-                                        <h2>Cộng giỏ hàng</h2>
-                                    </div>
-                                    <div class="cart__totals-details">
-                                        <div class="totals-details">
-                                            <div class="text__price-currency">Tạm tính</div>
-                                            <div class="subtotal__price-currency">
-                                                <b><?php echo number_format(($total_price), 0, ',', '.'); ?>
-                                                    đ</b>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cart__btn-payment">
-                                        <a href="paymentForm.php">
-                                            <button class="button">
-                                                Tiến hành thanh toán
-                                            </button>
-                                        </a>
+                        <div class="cart__totals">
+                            <div class="cart__totals-title">
+                                <h2>Cộng giỏ hàng</h2>
+                            </div>
+                            <div class="cart__totals-details">
+                                <div class="totals-details">
+                                    <div class="text__price-currency">Tạm tính</div>
+                                    <div class="subtotal__price-currency">
+                                        <b><?php echo number_format(($total_price), 0, ',', '.'); ?>
+                                            đ</b>
                                     </div>
                                 </div>
                             </div>
+                            <div class="cart__btn-payment">
+                                <a href="paymentForm.php">
+                                    <button class="button">
+                                        Tiến hành thanh toán
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
             </div>
-            
+
         </div>
-        
+
 
         <?php include_once ('layout/footer.php'); ?>
     </div>

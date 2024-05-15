@@ -54,7 +54,7 @@
     
                             <ul class="category-list">
                                 <li class="category-item">
-                                    <a href="./admin.php" class="category-item__link">Sản phẩm hot</a>
+                                    <a href="./admin.php" class="category-item__link">THÔNG TIN ADMIN</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="./adminUserManagement.php" class="category-item__link">QUẢN LÝ <br> NGƯỜI DÙNG</a>
